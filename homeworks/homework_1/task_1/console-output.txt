@@ -1,0 +1,28 @@
+C:\Users\Ivan912>scala
+Welcome to Scala 2.13.6 (OpenJDK 64-Bit Server VM, Java 11.0.11).
+Type in expressions for evaluation. Or try :help.
+
+scala> val name = "Ivan Medvedev"
+val name: String = Ivan Medvedev
+
+scala> val printGreetings: (String, String) => Unit = (hello, name) => println(s"$hello Scala! This is $
+n me")
+val printGreetings: (String, String) => Unit = $Lambda$1083/0x0000000100756840@2110684a
+
+scala> val greetings = "Hello" :: "Hola" :: "Guten tag" :: Nil
+val greetings: List[String] = List(Hello, Hola, Guten tag)
+
+scala> printGreetings(greetings.head, name)
+Hello Scala! This is Ivan Medvedev
+
+scala> for (g <- greetings.tail) printGreetings(g, name)
+Hola Scala! This is Ivan Medvedev
+Guten tag Scala! This is Ivan Medvedev
+
+scala> val reversedName = name.reverse
+val reversedName: String = vedevdeM navI
+
+scala> for (g <- greetings) printGreetings(g, reversedName)
+Hello Scala! This is vedevdeM navI
+Hola Scala! This is vedevdeM navI
+Guten tag Scala! This is vedevdeM navI
