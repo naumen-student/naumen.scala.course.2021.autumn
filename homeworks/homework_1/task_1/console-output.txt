@@ -1,0 +1,23 @@
+Welcome to Scala 2.13.6 (OpenJDK 64-Bit Server VM, Java 16.0.2).
+Type in expressions for evaluation. Or try :help.
+
+scala> val hw1 = "Hello"
+val hw1: String = Hello
+
+scala> val hw2 = "guten tag"
+val hw2: String = guten tag
+
+scala> val hw3 = "Hola"
+val hw3: String = Hola
+
+scala> val list = List(hw1,hw2,hw3)
+val list: List[String] = List(Hello, guten tag, Hola)
+
+scala> list.foreach(x => println(x + " this is Konstantin"))
+Hello this is Konstantin
+guten tag this is Konstantin
+Hola this is Konstantin
+
+scala> ("Konstantine").foldLeft("")((a,b)=>b.toString ++ a.toString)
+val res5: String = enitnatsnoK
+
