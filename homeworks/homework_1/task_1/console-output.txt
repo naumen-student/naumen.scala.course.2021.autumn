@@ -1,0 +1,39 @@
+C:\Users\111>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 16).
+Type in expressions for evaluation. Or try :help.
+
+scala> println("Hello Scala! This is Maria Dyuzheva")
+Hello Scala! This is Maria Dyuzheva
+
+scala> val x = "Hello Scala! This is Maria Dyuzheva"
+x: String = Hello Scala! This is Maria Dyuzheva
+
+scala> println(x)
+Hello Scala! This is Maria Dyuzheva
+
+scala> val sayHello = (s: String) => s + " Scala! This is Maria Dyuzheva"
+sayHello: String => String = $$Lambda$1093/0x0000000801141818@531ec2ca
+
+scala> println(sayHello("Hello"))
+Hello Scala! This is Maria Dyuzheva
+
+scala> println(sayHello("Guten tag"))
+Guten tag Scala! This is Maria Dyuzheva
+
+scala> println(sayHello("Hola"))
+Hola Scala! This is Maria Dyuzheva
+
+scala> val x = "Maria Dyuzheva"
+x: String = Maria Dyuzheva
+
+scala> val sayHello = (s: String) => s + " Scala! This is " + x.reverse
+sayHello: String => String = $$Lambda$1148/0x0000000801156060@5edaa572
+
+scala> println(sayHello("Hello"))
+Hello Scala! This is avehzuyD airaM
+
+scala> println(sayHello("Hola"))
+Hola Scala! This is avehzuyD airaM
+
+scala> println(sayHello("Guten tag"))
+Guten tag Scala! This is avehzuyD airaM
