@@ -1,0 +1,14 @@
+[debug] > Exec(__runWatch console0, Some(0862f00e-0474-4927-b1cc-4f43c4438575), Some(CommandSource(console0)))
+[debug] > Exec(sbtStashOnFailure, None, Some(CommandSource(console0)))
+[debug] > Exec(__preWatch console0, None, Some(CommandSource(console0)))
+[debug] > Exec(run, None, Some(CommandSource(console0)))
+[debug] Evaluating tasks: Compile / run
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[info] compiling 1 Scala source to C:\Users\Sergei\source\repos\scala\SbtExampleProject\target\scala-2.13\classes ...
+[info] done compiling
+[success] Total time: 1 s, completed 17.09.2021 3:23:58
+[debug] > Exec(resumeFromFailure, None, Some(CommandSource(console0)))
+[debug] > Exec(sbtPopOnFailure, None, Some(CommandSource(console0)))
+[debug] > Exec(__postWatch console0, None, Some(CommandSource(console0)))
+[debug] > Exec(resumeFromFailure, None, None)
+[debug] > Exec(__waitWatch console0, None, None)
