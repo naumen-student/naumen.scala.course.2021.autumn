@@ -1,0 +1,16 @@
+[0m[[0m[31merror[0m] [0m[0m/home/fall/scala-naumen/naumen.scala.course.2021.autumn/homeworks/homework_1/task_3/src/main/scala/Main.scala:1:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval myName: String = "Vlad"[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/fall/scala-naumen/naumen.scala.course.2021.autumn/homeworks/homework_1/task_3/src/main/scala/Main.scala:2:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mprintln(f"Hello Scala! This is ${myName}")[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/fall/scala-naumen/naumen.scala.course.2021.autumn/homeworks/homework_1/task_3/src/main/scala/Main.scala:4:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval Greetings = List("Hello", "Hola", "Guten tag")[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/fall/scala-naumen/naumen.scala.course.2021.autumn/homeworks/homework_1/task_3/src/main/scala/Main.scala:5:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mfor (greeting <- Greetings) println(f"${greeting} Scala! This is ${myName}")[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/fall/scala-naumen/naumen.scala.course.2021.autumn/homeworks/homework_1/task_3/src/main/scala/Main.scala:7:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mfor (greeting <- Greetings) println(f"${greeting} Scale! This is ${myName.reverse}")[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m5 errors found[0m
