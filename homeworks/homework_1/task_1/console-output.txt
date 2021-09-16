@@ -1,0 +1,95 @@
+[info] welcome to sbt 1.5.5 (Temurin Java 1.8.0_302)
+[info] loading project definition from C:\Java\first_porject\project
+[info] loading settings for project root from build.sbt ...
+[info] set current project to scala3-simple (in build file:/C:/Java/first_porject/)
+
+scala> val str = "Hello Scala! This is Andrew Gomzyakov"
+val str: String = Hello Scala! This is Andrew Gomzyakov
+
+scala>
+
+scala> println(str)
+Hello Scala! This is Andrew Gomzyakov
+
+scala> str.replace('Hello', 'Hi')
+-- Error:
+1 |str.replace('Hello', 'Hi')
+  |            ^
+  |symbol literal 'Hello is no longer supported,
+  |use a string literal "Hello" or an application Symbol("Hello") instead,
+  |or enclose in braces '{Hello} if you want a quoted expression.
+  |For now, you can also `import language.deprecated.symbolLiterals` to accept
+  |the idiom, but this possibility might no longer be available in the future.
+-- Error:
+1 |str.replace('Hello', 'Hi')
+  |                  ^
+  |                  unclosed character literal
+-- Error:
+1 |str.replace('Hello', 'Hi')
+  |                        ^
+  |                        unclosed character literal
+
+scala> str.replace("Hello", "Hi")
+val res0: String = Hi Scala! This is Andrew Gomzyakov
+
+scala> println(str)
+Hello Scala! This is Andrew Gomzyakov
+
+scala> str = str.replace("Hello", "Hi")
+-- Error:
+1 |str = str.replace("Hello", "Hi")
+  |^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |Reassignment to val str
+
+scala> val str2 = str.replace("Hello", "Hi")
+val str2: String = Hi Scala! This is Andrew Gomzyakov
+
+scala> val name = "Andrey Gomzyakov"
+val name: String = Andrey Gomzyakov
+
+scala> val reverseName = name.reverse()
+-- Error:
+1 |val reverseName = name.reverse()
+  |                  ^^^^^^^^^^^^^^
+  |missing argument for parameter i of method apply in class StringOps: (i: Int): Char
+
+scala> val reverseName = name.reverse
+val reverseName: String = vokayzmoG yerdnA
+
+scala> val str3 = str1.replace(name, reverseName)
+-- Error:
+1 |val str3 = str1.replace(name, reverseName)
+  |           ^^^^
+  |           Not found: str1
+
+scala> val str3 = str.replace(name, reverseName)
+val str3: String = Hello Scala! This is Andrew Gomzyakov
+
+scala> println(str3)
+Hello Scala! This is Andrew Gomzyakov
+
+scala> val name = "Andrew Gomzyakov"
+val name: String = Andrew Gomzyakov
+
+scala> val reverseName = name.reverse
+val reverseName: String = vokayzmoG werdnA
+
+scala> val str3 = str.replace(name, reverseName)
+val str3: String = Hello Scala! This is vokayzmoG werdnA
+
+scala> println(str3)
+Hello Scala! This is vokayzmoG werdnA
+
+scala> val str2 = str2.replace(name, reverseName)
+-- Error:
+1 |val str2 = str2.replace(name, reverseName)
+  |           ^
+  |           Recursive value str2 needs type
+
+scala> val str4 = str2.replace(name, reverseName)
+val str4: String = Hi Scala! This is vokayzmoG werdnA
+
+scala> println(str4)
+Hi Scala! This is vokayzmoG werdnA
+
+scala>
