@@ -1,0 +1,72 @@
+Microsoft Windows [Version 10.0.19042.1165]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+C:\Users\Daniel>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 16.0.2).
+Type in expressions for evaluation. Or try :help.
+
+scala> var a = "Hello Scala! This is Daniel Evdokimov"
+a: String = Hello Scala! This is Daniel Evdokimov
+
+scala> print(a)
+Hello Scala! This is Daniel Evdokimov
+scala> a.Range(0, 4, 1) = "Hola"
+<console>:13: error: value Range is not a member of String
+       a.Range(0, 4, 1) = "Hola"
+         ^
+
+scala> a[1] = 'o'
+<console>:1: error: identifier expected but integer literal found.
+       a[1] = 'o'
+         ^
+
+scala> var b = a.replace("Hello", "Hola")
+b: String = Hola Scala! This is Daniel Evdokimov
+
+scala> print(b)
+Hola Scala! This is Daniel Evdokimov
+scala> a = b.replace("Hola", "Guten tag")
+a: String = Guten tag Scala! This is Daniel Evdokimov
+
+scala> print(a)
+Guten tag Scala! This is Daniel Evdokimov
+scala> c = a.replace("Guten tag", "Hello")
+<console>:12: error: not found: value c
+       c = a.replace("Guten tag", "Hello")
+       ^
+<console>:13: error: not found: value c
+       val $ires1 = c
+                    ^
+
+scala> var c = a.replace("Guten tag", "Hello")
+c: String = Hello Scala! This is Daniel Evdokimov
+
+scala> print(c)
+Hello Scala! This is Daniel Evdokimov
+scala> var rev = "Daniel Evdokimov".reverse
+rev: String = vomikodvE leinaD
+
+scala> var name = "Daniel Evdokimov"
+name: String = Daniel Evdokimov
+
+scala> a.replace(name, rev)
+res5: String = Guten tag Scala! This is vomikodvE leinaD
+
+scala> print(res5)
+Guten tag Scala! This is vomikodvE leinaD
+scala> b.replase(name, rev)
+<console>:15: error: value replase is not a member of String
+       b.replase(name, rev)
+         ^
+
+scala> b.replace(name, rev)
+res8: String = Hola Scala! This is vomikodvE leinaD
+
+scala> print(res8)
+Hola Scala! This is vomikodvE leinaD
+scala> c.replace(name, rev)
+res10: String = Hello Scala! This is vomikodvE leinaD
+
+scala> print(res10)
+Hello Scala! This is vomikodvE leinaD
+scala>
