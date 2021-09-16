@@ -1,0 +1,62 @@
+naumen.scala.course.2021.autumn/homeworks/homework_1/task_1 on  master [!] took 3m 29s 
+➜ amm                     
+Loading...
+Welcome to the Ammonite Repl 2.3.8 (Scala 2.13.3 Java 16.0.1)
+@ val name = "Stepan" 
+name: String = "Stepan"
+
+@ val text = s" Scala! This is $name" 
+text: String = " Scala! This is Stepan"
+
+@ val text1 = "Hello" + text 
+text1: String = "Hello Scala! This is Stepan"
+
+@ println(text1) 
+Hello Scala! This is Stepan
+
+
+@ val text2 = "Hola" + text 
+text2: String = "Hola Scala! This is Stepan"
+
+@ println(text2) 
+Hola Scala! This is Stepan
+
+
+@ val text3 = "Guten tag" + text 
+text3: String = "Guten tag Scala! This is Stepan"
+
+@ println(text3) 
+Guten tag Scala! This is Stepan
+
+
+@ val inverse_name = name.reverse 
+inverse_name: String = "napetS"
+
+@ val inverse_template = text.substring(16) + inverse_ 
+inverse_name      inverse_template
+
+@ val inverse_template = text.substring(0, 16) + inverse_name 
+inverse_template: String = " Scala! This is napetS"
+
+@ val inv_fst = text1.substring(0, 21) + inverse_name 
+inv_fst: String = "Hello Scala! This is napetS"
+
+@ println(inv_fst) 
+Hello Scala! This is napetS
+
+
+@ val inv_snd = text2.substring(0, 20) + inverse_name 
+inv_snd: String = "Hola Scala! This is napetS"
+
+@ println(inv_snd) 
+Hola Scala! This is napetS
+
+
+@ val inv_thd = "Guten tag" + inverse_template 
+inv_thd: String = "Guten tag Scala! This is napetS"
+
+@ println(inv_thd) 
+Guten tag Scala! This is napetS
+
+
+@ Bye!
