@@ -1,0 +1,26 @@
+C:\Users\Sergei>scala
+Welcome to Scala 2.13.6 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_301).
+Type in expressions for evaluation. Or try :help.
+
+scala> val myName = "Sergei Lugovykh"
+val myName: String = Sergei Lugovykh
+
+scala> val names = Array(myName, myName.reverse)
+val names: Array[String] = Array(Sergei Lugovykh, hkyvoguL iegreS)
+
+scala> val hellos = Array("Hello", "Hola", "Guten Tag")
+val hellos: Array[String] = Array(Hello, Hola, Guten Tag)
+
+scala> def makeGreeting(hello:String, name:String) = s"${hello} Scala! This is ${name}"
+def makeGreeting(hello: String, name: String): String
+
+scala> for (name <- names; hello <- hellos) {
+| val greeting = makeGreeting(hello, name)
+| println(greeting)
+| }
+Hello Scala! This is Sergei Lugovykh
+Hola Scala! This is Sergei Lugovykh
+Guten Tag Scala! This is Sergei Lugovykh
+Hello Scala! This is hkyvoguL iegreS
+Hola Scala! This is hkyvoguL iegreS
+Guten Tag Scala! This is hkyvoguL iegreS
