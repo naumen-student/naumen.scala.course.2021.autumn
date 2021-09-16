@@ -1,0 +1,33 @@
+PS C:\Users\Oldsm> scala
+Welcome to Scala 2.13.6 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_301).
+Type in expressions for evaluation. Or try :help.
+
+scala> var usrName:String = "Yegor Petrov"
+var usrName: String = Yegor Petrov
+
+scala> print(s"Hello Scala! This is $usrName")
+Hello Scala! This is Yegor Petrov
+scala> def grtMsg(greetings:String) : Unit = {println(greetings + " " + usrName)}
+def grtMsg(greetings: String): Unit
+
+scala> val listOfNames = List("Hola", "Hello", "Aloha", "Guten Tag", "Bonjour", "Hey")
+val listOfNames: List[String] = List(Hola, Hello, Aloha, Guten Tag, Bonjour, Hey)
+
+scala> listOfNames.foreach(greeting => grtMsg(greeting))
+Hola Yegor Petrov
+Hello Yegor Petrov
+Aloha Yegor Petrov
+Guten Tag Yegor Petrov
+Bonjour Yegor Petrov
+Hey Yegor Petrov
+
+scala> usrName = usrName.reverse
+// mutated usrName
+
+scala> listOfNames.foreach(greeting => grtMsg(greeting))
+Hola vorteP rogeY
+Hello vorteP rogeY
+Aloha vorteP rogeY
+Guten Tag vorteP rogeY
+Bonjour vorteP rogeY
+Hey vorteP rogeY
