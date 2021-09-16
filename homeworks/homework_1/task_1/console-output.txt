@@ -1,0 +1,26 @@
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_301).
+Type in expressions for evaluation. Or try :help.
+
+scala> println("hello")
+hello
+
+scala> val name = "xsitin"
+name: String = xsitin
+
+scala> println(s"Hello Scala! This is $name")
+Hello Scala! This is xsitin
+
+scala> println(s"Hola Scala! This is $name")
+Hola Scala! This is xsitin
+
+scala> println(s"Guten tag Scala! This is $name")
+Guten tag Scala! This is xsitin
+
+scala> println(s"Guten tag Scala! This is " + name.reverse)
+Guten tag Scala! This is nitisx
+
+scala> println("Hola Scala! This is " + name.reverse)
+Hola Scala! This is nitisx
+
+scala> println("Hello Scala! This is " + name.reverse)
+Hello Scala! This is nitisx
