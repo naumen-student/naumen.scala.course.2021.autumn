@@ -1,0 +1,25 @@
+C:\Users\danil>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 13.0.2).
+Type in expressions for evaluation. Or try :help.
+
+scala> def helloName(hello: String, name:String): Unit = {
+     | println(hello + " Scala! This is " + name)
+     | }
+helloName: (hello: String, name: String)Unit
+
+scala> val name = "Danil Zheludkov"
+name: String = Danil Zheludkov
+
+scala> val names = Array(name, name.reverse)
+names: Array[String] = Array(Danil Zheludkov, vokdulehZ linaD)
+
+scala> val hellos = Array("Hello", "Hola", "Guten tag")
+hellos: Array[String] = Array(Hello, Hola, Guten tag)
+
+scala> names.foreach(y => hellos.foreach(x => helloName(x, y)))
+Hello Scala! This is Danil Zheludkov
+Hola Scala! This is Danil Zheludkov
+Guten tag Scala! This is Danil Zheludkov
+Hello Scala! This is vokdulehZ linaD
+Hola Scala! This is vokdulehZ linaD
+Guten tag Scala! This is vokdulehZ linaD
