@@ -1,0 +1,11 @@
+[debug] Packaging C:\Users\Петр Бронепоезд\IdeaProjects\task_3\target\scala-2.13\task_3_2.13-0.1.jar ...
+[debug] Input file mappings:
+[debug] 	task_3
+[debug] 	  C:\Users\Петр Бронепоезд\IdeaProjects\task_3\target\scala-2.13\classes\task_3
+[debug] 	task_3\main$.class
+[debug] 	  C:\Users\Петр Бронепоезд\IdeaProjects\task_3\target\scala-2.13\classes\task_3\main$.class
+[debug] 	task_3\main$delayedInit$body.class
+[debug] 	  C:\Users\Петр Бронепоезд\IdeaProjects\task_3\target\scala-2.13\classes\task_3\main$delayedInit$body.class
+[debug] 	task_3\main.class
+[debug] 	  C:\Users\Петр Бронепоезд\IdeaProjects\task_3\target\scala-2.13\classes\task_3\main.class
+[debug] Done packaging.
