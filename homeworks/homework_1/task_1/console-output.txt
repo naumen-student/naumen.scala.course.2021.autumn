@@ -1,0 +1,32 @@
+C:\Users\belyaev.ia>scala
+Welcome to Scala 2.12.10 (OpenJDK 64-Bit Server VM, Java 1.8.0_292).
+Type in expressions for evaluation. Or try :help.
+
+scala> var hello = Array("Hello", "Hi", "Dobroe ytro")
+hello: Array[String] = Array(Hello, Hi, Dobroe ytro)
+
+scala> var name = "Ilya"
+name: String = Ilya
+
+scala> def printHello(name: String, hello: String) = println("$hello Scala! This is $name")
+printHello: (name: String, hello: String)Unit
+
+scala> hello.foreach(h => printHello(name, h))
+$hello Scala! This is $name
+$hello Scala! This is $name
+$hello Scala! This is $name
+
+scala> //well... im definetly forgot something...
+
+scala> def printHello(name: String, hello: String) = println(s"$hello Scala! This is $name")
+printHello: (name: String, hello: String)Unit
+
+scala> hello.foreach(h => printHello(name, h))
+Hello Scala! This is Ilya
+Hi Scala! This is Ilya
+Dobroe ytro Scala! This is Ilya
+
+scala> hello.foreach(h => printHello(name.reverse, h))
+Hello Scala! This is aylI
+Hi Scala! This is aylI
+Dobroe ytro Scala! This is aylI
