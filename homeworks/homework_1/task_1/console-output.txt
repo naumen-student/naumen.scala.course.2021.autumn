@@ -1,0 +1,48 @@
+C:\WINDOWS\system32>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_51).
+Type in expressions for evaluation. Or try :help.
+
+scala> println("Hello Scala! This is Lev")
+Hello Scala! This is Lev
+
+scala> val name = "Lev"
+name: String = Lev
+
+scala> println(s"Hola Scala! This is $name")
+Hola Scala! This is Lev
+
+scala> println(s"Guten tag Scala! This is $name")
+Guten tag Scala! This is Lev
+
+scala> val message = "Scala! This is"
+message: String = Scala! This is
+
+scala> printf(s"Hi $message", name.reverse)_
+<console>:14: error: _ must follow method; cannot follow Unit
+       printf(s"Hi $message", name.reverse)_
+             ^
+
+scala> println(s"Hi $message", name.reverse)_
+<console>:14: error: _ must follow method; cannot follow Unit
+       println(s"Hi $message", name.reverse)_
+              ^
+
+scala> println(s"Hi $message" + name.reverse)_
+<console>:14: error: _ must follow method; cannot follow Unit
+       println(s"Hi $message" + name.reverse)_
+              ^
+
+scala> println(s"Hi $message" + name.reverse)
+Hi Scala! This isveL
+
+scala> println(s"Hi $message " + name.reverse)
+Hi Scala! This is veL
+
+scala> println(s"Hello $message " + name.reverse)
+Hello Scala! This is veL
+
+scala> println(s"Hola $message " + name.reverse)
+Hola Scala! This is veL
+
+scala> println(s"Guten tag $message " + name.reverse)
+Guten tag Scala! This is veL
