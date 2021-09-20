@@ -1,0 +1,60 @@
+❯ scala
+Welcome to Scala version 2.11.4 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_301).
+Type in expressions to have them evaluated.
+Type :help for more information.
+
+scala> val myName = "Vlad"
+myName: String = Vlad
+
+scala> val template = " Scala! This is $myName"
+template: String = " Scala! This is $myName"
+
+scala> val template = s" Scala! This is $myName" //забыл поставить опцию :)
+template: String = " Scala! This is Vlad"
+
+scala> val greetInEng = "Hello" + template
+greetInEng: String = Hello Scala! This is Vlad
+
+scala> greetInEng
+res0: String = Hello Scala! This is Vlad
+
+scala> print(greetInEng)
+Hello Scala! This is Vlad
+scala> val greetInGer = "Guten tag" + template
+greetInGer: String = Guten tag Scala! This is Vlad
+
+scala> print(greetInEng)
+Hello Scala! This is Vlad
+scala> val greetInHun = "Szia" + template
+greetInHun: String = Szia Scala! This is Vlad
+
+scala> print(greetInHun)
+Szia Scala! This is Vlad
+scala> def reverse(s: String): String = {
+     |   if (s.isEmpty) ""
+     |   else reverse(s.tail) + s.head
+     | }
+reverse: (s: String)String
+
+scala> val revMyName = reverse(s"$myName")
+revMyName: String = dalV
+
+scala> val revTemplate = s" Scala! This is $revMyName"
+revTemplate: String = " Scala! This is dalV"
+
+scala> val revGreetInEng = "Hello" + revTemplate
+revGreetInEng: String = Hello Scala! This is dalV
+
+scala> print(revGreetInEng)
+Hello Scala! This is dalV
+
+scala> val revGreetInGer = "Guten tag" + revTemplate
+revGreetInGer: String = Guten tag Scala! This is dalV
+
+scala> print(revGreetInGer)
+Guten tag Scala! This is dalV
+scala> val revGreetInHun = "Szia" + revTemplate
+revGreetInHun: String = Szia Scala! This is dalV
+
+scala> print(revGreetInHun)
+Szia Scala! This is dalV
