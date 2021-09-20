@@ -1,0 +1,44 @@
+C:\Users\Эвелина>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 11.0.12).
+Type in expressions for evaluation. Or try :help.
+
+scala> var getString = (gretting: String, name: String) => gretting.concat(" Scala! This is ").concat(name)
+getString: (String, String) => String = $$Lambda$1079/0x000000010078d840@3babcaed
+
+scala> var name = "Evelina Yametova"
+name: String = Evelina Yametova
+
+scala> var greeting = "Hello"
+greeting: String = Hello
+
+scala> println(getString(greeting,name))
+Hello Scala! This is Evelina Yametova
+
+scala> greeting = "Hola"
+greeting: String = Hola
+
+scala> println(getString(greeting,name))
+Hola Scala! This is Evelina Yametova
+
+scala> greeting = "Guten tag"
+greeting: String = Guten tag
+
+scala> println(getString(greeting,name))
+Guten tag Scala! This is Evelina Yametova
+
+scala> println(getString(greeting,name.reverse))
+Guten tag Scala! This is avotemaY anilevE
+
+scala> greeting = "Hola"
+greeting: String = Hola
+
+scala> println(getString(greeting,name.reverse))
+Hola Scala! This is avotemaY anilevE
+
+scala> var greeting = "Hello"
+greeting: String = Hello
+
+scala> println(getString(greeting,name.reverse))
+Hello Scala! This is avotemaY anilevE
+
+scala>
