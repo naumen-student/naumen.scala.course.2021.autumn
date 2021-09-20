@@ -1,0 +1,26 @@
+C:\Users\Гриша>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 17).
+Type in expressions for evaluation. Or try :help.
+
+scala> val text =  "Hello Scala! This is Grisha Aydartsyan"
+text: String = Hello Scala! This is Grisha Aydartsyan
+
+scala> println(text)
+Hello Scala! This is Grisha Aydartsyan
+
+scala> println("Bonjour Scala! This is Grisha Aydartsyan")
+Bonjour Scala! This is Grisha Aydartsyan
+
+scala> println("Hola Scala! This is Grisha Aydartsyan")
+Hola Scala! This is Grisha Aydartsyan
+
+scala> println("Hello Scala! This is naystradyA ahsirG")
+Hello Scala! This is naystradyA ahsirG
+
+scala> println("Hola Scala! This is naystradyA ahsirG")
+Hola Scala! This is naystradyA ahsirG
+
+scala> println("Bonjour Scala! This is naystradyA ahsirG")
+Bonjour Scala! This is naystradyA ahsirG
+
+scala>

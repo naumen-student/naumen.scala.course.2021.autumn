@@ -1,0 +1,11 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging C:\Users\Гриша\IdeaProjects\untitled2\target\scala-2.13\untitled2_2.13-0.1.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Hello[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Гриша\IdeaProjects\untitled2\target\scala-2.13\classes\Hello[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Hello\Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Гриша\IdeaProjects\untitled2\target\scala-2.13\classes\Hello\Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Hello\Main$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Гриша\IdeaProjects\untitled2\target\scala-2.13\classes\Hello\Main$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Hello\Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Гриша\IdeaProjects\untitled2\target\scala-2.13\classes\Hello\Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m
