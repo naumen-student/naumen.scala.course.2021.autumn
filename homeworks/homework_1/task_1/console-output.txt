@@ -1,0 +1,54 @@
+scala> :paste < exit
+// Entering paste mode (exit to finish)
+
+sealed abstract class Greeting(val strValue: String)
+ object Greeting{
+   case object Hello extends Greeting("Hello")
+   case object Hola extends Greeting("Hola")
+   case object GutenTag extends Greeting("Guten Tag")
+ }
+exit
+
+// Exiting paste mode, now interpreting.
+
+class Greeting
+object Greeting
+
+scala> :paste < exit
+// Entering paste mode (exit to finish)
+
+val name = "Natalia Pervushina"
+ val nameReversed = name.reverse
+exit
+
+// Exiting paste mode, now interpreting.
+
+val name: String = Natalia Pervushina
+val nameReversed: String = anihsuvreP ailataN
+
+scala> def greeting(helloWord: Greeting, name: String): String = s"${helloWord.strValue} Scala! This is $name"
+def greeting(helloWord: Greeting, name: String): String
+
+scala> def greetingWithName = greeting(_, name)
+def greetingWithName: Greeting => String
+
+scala> def greetingWithNameReversed = greeting(_, nameReversed)
+def greetingWithNameReversed: Greeting => String
+
+scala> println(greetingWithName(Greeting.Hello))
+Hello Scala! This is Natalia Pervushina
+
+scala> println(greetingWithName(Greeting.Hola))
+Hola Scala! This is Natalia Pervushina
+
+scala> println(greetingWithName(Greeting.GutenTag))
+Guten Tag Scala! This is Natalia Pervushina
+
+scala> println(greetingWithNameReversed(Greeting.Hello))
+Hello Scala! This is anihsuvreP ailataN
+
+scala> println(greetingWithNameReversed(Greeting.Hola))
+Hola Scala! This is anihsuvreP ailataN
+
+scala> println(greetingWithNameReversed(Greeting.GutenTag))
+Guten Tag Scala! This is anihsuvreP ailataN
