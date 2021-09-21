@@ -1,33 +1,64 @@
+import scala.collection.mutable.ListBuffer
+
 object Exercises {
 
-    /*ПРИМЕР*/
-    /*Реализовать функцию, которая возвращает все целые числа в заданном диапазоне (от iForm до iTo), которые делятся
-    на 3 или на 7.*/
-    /*Реализовать юнит-тесты в src/test/scala для данной функции.*/
-    def divBy3Or7(iFrom: Int, iTo: Int): Seq[Int] = {
-        for {i <- iFrom to iTo
-             if i % 3 == 0 || i % 7 == 0
-        } yield i
+    // Возвращает последовательность чисел кратных 3 или 7
+    def divBy3Or7(
+        start: Int,
+        stop: Int
+    ):
+    Seq[Int] = {
+        for {
+            i <- start to stop
+            if i % 3 == 0 ||
+               i % 7 == 0
+        }
+
+        yield i
     }
-
-
 
     /*ЗАДАНИЕ I*/
     /*Реализовать функцию, которая возвращает сумму всех целых чисел в заданном диапазоне (от iForm до iTo), которые делятся
     на 3 или на 5.*/
     /*Реализовать юнит-тесты в src/test/scala для данной функции.*/
-    def sumOfDivBy3Or5(iFrom: Int, iTo: Int): Long = ???
+    def sumOfDivBy3Or5(
+        start: Int,
+        finish: Int
+    ):
+    Long = {
+        val range = start to finish
 
-
+        range.filter(
+            num => {
+                num % 3 == 0 ||
+                num % 5 == 0
+            }
+        ).sum
+    }
 
     /*ЗАДАНИЕ II*/
     /*Реализовать функцию, которая вычисляет все различные простые множители целого числа отличные от 1.
     Число 80 раскладывается на множители 1 * 2 * 2 * 2 * 2 * 5, результат выполнения функции => Seq(2, 5).
     Число 98 можно разложить на множители 1 * 2 * 7 * 7, результат выполнения функции => Seq(2, 7).*/
     /*Реализовать юнит-тесты в src/test/scala для данной функции.*/
-    def primeFactor(number: Int): Seq[Int] = ???
+    def primeFactor(number: Int): Seq[Int] = {
+        var n = number
+        var divisor = 2
+        val factors = new ListBuffer[Int]
 
+        while (n >= 2) {
+            if (n % divisor == 0) {
+                factors += divisor
+                n = n / divisor
+            }
+            else {
+                divisor += 1
+            }
+        }
 
+        factors.toSet
+               .toSeq
+    }
 
     /*ЗАДАНИЕ III*/
     /*Дано: класс двумерного вектора, а также функции вычисления модуля вектора (abs), вычисления скалярного произведения
