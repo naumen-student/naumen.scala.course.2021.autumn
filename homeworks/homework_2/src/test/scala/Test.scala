@@ -24,17 +24,35 @@ object Test extends TestSuite{
         }
         
         'test_sumByFunc - {
-            assert(Exercises.sumScalars(Vector2d(3, 0), Vector2d(3, 0)) == Seq(2, 3))
-            assert(Exercises.sumScalars(7) == Seq(7))
-            assert(Exercises.sumScalars(3*3*11) == Seq(3, 11))
-            assert(Exercises.primeFactor(2*3*4*5) == Seq(2, 3, 5))
-            assert(Exercises.primeFactor(2*3*6) == Seq(2, 3))
-            assert(Exercises.primeFactor(2*3*6) == Seq(2, 3))
-        }
-        
-        'test_sumByFunc - {
-			var x = Exercises.sortByHeavyweight()
-			println(x)
+			val eps = 0.000000001
+
+            assert((Exercises.sumScalars(
+				Exercises.Vector2D(3, 1),
+				Exercises.Vector2D(3, 2),
+				Exercises.Vector2D(7, 5),
+				Exercises.Vector2D(0, 33)) - (3*3+1*2+7*0+5*33))
+					< eps)
+
+			assert(Exercises.sumScalars(
+				Exercises.Vector2D(0, 0),
+				Exercises.Vector2D(3, 2),
+				Exercises.Vector2D(7, 5),
+				Exercises.Vector2D(0, 0))
+					< eps)
+
+			assert((Exercises.sumCosines(
+				Exercises.Vector2D(2, 0),
+				Exercises.Vector2D(1, 1),
+				Exercises.Vector2D(0, 7),
+				Exercises.Vector2D(5, 5)) - java.lang.Math.sqrt(2))
+					< eps)
+
+			assert((Exercises.sumCosines(
+				Exercises.Vector2D(3, 0),
+				Exercises.Vector2D(2, 3.4641016151377544),
+				Exercises.Vector2D(0, 5),
+				Exercises.Vector2D(9.526279441628825, 5.5)) - 1)
+					< eps)
         }
     }
 }
