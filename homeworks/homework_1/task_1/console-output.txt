@@ -1,0 +1,24 @@
+PS C:\Users\walue> scala
+Welcome to Scala 2.12.10 (OpenJDK 64-Bit Server VM, Java 15).
+Type in expressions for evaluation. Or try :help.
+
+scala> val myName = "Artem"
+myName: String = Artem
+
+scala> println(s"Hello Scala! This is $myName")
+Hello Scala! This is Artem
+
+scala> println(s"Hola Scala! This is $myName")
+Hola Scala! This is Artem
+
+scala> println(s"Guten tag Scala! This is $myName")
+Guten tag Scala! This is Artem
+
+scala> println(s"Hola Scala! This is ${myName.reverse}")
+Hola Scala! This is metrA
+
+scala> println(s"Hello Scala! This is ${myName.reverse}")
+Hello Scala! This is metrA
+
+scala> println(s"Guten tag Scala! This is ${myName.reverse}")
+Guten tag Scala! This is metrA
