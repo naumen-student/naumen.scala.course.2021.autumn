@@ -59,7 +59,6 @@ object Exercises {
     Функция sumCosines должна вычислять сумму косинусов углов между парами векторов cosBetween(leftVec0, leftVec1) + cosBetween(rightVec0, rightVec1).*/
     /*Реализовать юнит-тесты в src/test/scala для функций sumScalars и sumCosines*/
     case class Vector2D(x: Double, y: Double)
-
     def abs(vec: Vector2D): Double = Math.sqrt(vec.x * vec.x + vec.y * vec.y)
 
     def scalar(vec0: Vector2D, vec1: Vector2D): Double = vec0.x * vec1.x + vec0.y * vec1.y

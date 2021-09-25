@@ -2,7 +2,6 @@ import Exercises.Vector2D
 import utest._
 
 object Test extends TestSuite{
-
     val tests: Tests = Tests {
         'test_divBy3Or7 - {
             assert(Exercises.divBy3Or7(1, 3) == Seq(3))
