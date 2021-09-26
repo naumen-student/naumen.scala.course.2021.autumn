@@ -1,0 +1,49 @@
+[debug] Full compilation, no sources in previous analysis.
+[debug] All sources are invalidated.
+[debug] Recompiling all 1 sources: invalidated sources (1) exceeded 50.0% of all sources
+[info] Compiling 1 Scala source to C:\Users\Пользователь\OneDrive\Рабочий стол\task\target\scala-2.13\classes ...
+[debug] Getting org.scala-sbt:compiler-bridge_2.13:1.2.5:compile for Scala 2.13.6
+[info] Non-compiled module 'compiler-bridge_2.13' for Scala 2.13.6. Compiling...
+[debug] Creating plain compiler interface for 2.13.6.
+[debug]   > Arguments: 
+[debug] 	-nowarn
+[debug] 	-d
+[debug] 	C:\Users\73B5~1\AppData\Local\Temp\sbt_eda73970
+[debug] 	-bootclasspath
+[debug] 	C:\Users\Пользователь\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.13.6.jar
+[debug] 	-classpath
+[debug] 	C:\Users\73B5~1\AppData\Local\Temp\sbt_5b12c157\jars\org.scala-sbt\compiler-interface\compiler-interface-1.2.5.jar;C:\Users\73B5~1\AppData\Local\Temp\sbt_5b12c157\jars\org.scala-sbt\util-interface\util-interface-1.2.2.jar;C:\Users\73B5~1\AppData\Local\Temp\sbt_5b12c157\srcs\org.scala-sbt\compiler-bridge_2.13\compiler-bridge_2.13-1.2.5-sources.jar;C:\Users\Пользователь\.ivy2\cache\org.scala-lang\scala-compiler\jars\scala-compiler-2.13.6.jar;C:\Users\Пользователь\.ivy2\cache\org.scala-lang\scala-reflect\jars\scala-reflect-2.13.6.jar;C:\Users\Пользователь\.ivy2\cache\org.jline\jline\jars\jline-3.19.0.jar;C:\Users\Пользователь\.ivy2\cache\net.java.dev.jna\jna\jars\jna-5.3.1.jar
+[debug] 	C:\Users\73B5~1\AppData\Local\Temp\sbt_7729254f\xsbt\API.scala
+[debug] 	C:\Users\73B5~1\AppData\Local\Temp\sbt_7729254f\xsbt\Analyzer.scala
+[debug] 	C:\Users\73B5~1\AppData\Local\Temp\sbt_7729254f\xsbt\CallbackGlobal.scala
+[debug] 	C:\Users\73B5~1\AppData\Local\Temp\sbt_7729254f\xsbt\ClassName.scala
+[debug] 	C:\Users\73B5~1\AppData\Local\Temp\sbt_7729254f\xsbt\Command.scala
+[debug] 	C:\Users\73B5~1\AppData\Local\Temp\sbt_7729254f\xsbt\Compat.scala
+[debug] 	C:\Users\73B5~1\AppData\Local\Temp\sbt_7729254f\xsbt\CompilerInterface.scala
+[debug] 	C:\Users\73B5~1\AppData\Local\Temp\sbt_7729254f\xsbt\ConsoleInterface.scala
+[debug] 	C:\Users\73B5~1\AppData\Local\Temp\sbt_7729254f\xsbt\DelegatingReporter.scala
+[debug] 	C:\Users\73B5~1\AppData\Local\Temp\sbt_7729254f\xsbt\Dependency.scala
+[debug] 	C:\Users\73B5~1\AppData\Local\Temp\sbt_7729254f\xsbt\ExtractAPI.scala
+[debug] 	C:\Users\73B5~1\AppData\Local\Temp\sbt_7729254f\xsbt\ExtractUsedNames.scala
+[debug] 	C:\Users\73B5~1\AppData\Local\Temp\sbt_7729254f\xsbt\GlobalHelpers.scala
+[debug] 	C:\Users\73B5~1\AppData\Local\Temp\sbt_7729254f\xsbt\InteractiveConsoleFactory.scala
+[debug] 	C:\Users\73B5~1\AppData\Local\Temp\sbt_7729254f\xsbt\InteractiveConsoleHelper.scala
+[debug] 	C:\Users\73B5~1\AppData\Local\Temp\sbt_7729254f\xsbt\InteractiveConsoleInterface.scala
+[debug] 	C:\Users\73B5~1\AppData\Local\Temp\sbt_7729254f\xsbt\InteractiveConsoleResponse.scala
+[debug] 	C:\Users\73B5~1\AppData\Local\Temp\sbt_7729254f\xsbt\JavaUtils.scala
+[debug] 	C:\Users\73B5~1\AppData\Local\Temp\sbt_7729254f\xsbt\LocalToNonLocalClass.scala
+[debug] 	C:\Users\73B5~1\AppData\Local\Temp\sbt_7729254f\xsbt\LocateClassFile.scala
+[debug] 	C:\Users\73B5~1\AppData\Local\Temp\sbt_7729254f\xsbt\Log.scala
+[debug] 	C:\Users\73B5~1\AppData\Local\Temp\sbt_7729254f\xsbt\Message.scala
+[debug] 	C:\Users\73B5~1\AppData\Local\Temp\sbt_7729254f\xsbt\ScaladocInterface.scala
+[debug]       
+[info]   Compilation completed in 15.406s.
+[debug] Getting org.scala-sbt:compiler-bridge_2.13:1.2.5:compile for Scala 2.13.6
+[debug] [zinc] Running cached compiler 1c30f0aa for Scala compiler version 2.13.6
+[debug] [zinc] The Scala compiler is invoked with:
+[debug] 	-bootclasspath
+[debug] 	C:\Users\Пользователь\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.13.6.jar
+[debug] 	-classpath
+[debug] 	C:\Users\Пользователь\OneDrive\Рабочий стол\task\target\scala-2.13\classes
+[debug] Scala compilation took 18.5231264 s
+[info] Done compiling.
