@@ -134,5 +134,4 @@ object Exercises {
     val m = p * v
     m
   }
-
 }
