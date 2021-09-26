@@ -38,5 +38,17 @@ object Test extends TestSuite {
         'test_sumCosines - {
             assert(round3(Exercises.sumCosines((1, 0), (1, 1), (1, 0), (0, 1))) == round3(Math.sqrt(2) / 2))
         }
+
+        val balls: Map[String, (Int, Double)] =
+            Map(
+                "Aluminum" -> (3, 2.6889),
+                "Tungsten" -> (2, 19.35),
+                "Graphite" -> (12, 2.1),
+                "Iron" -> (3, 7.874)
+            )
+
+        'test_sortByHeavyweight - {
+            assert(Exercises.sortByHeavyweight(balls) == Seq("Aluminum", "Iron", "Graphite", "Tungsten"))
+        }
     }
 }
