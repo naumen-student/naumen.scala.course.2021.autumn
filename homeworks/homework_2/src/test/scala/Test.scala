@@ -44,11 +44,11 @@ object Test extends TestSuite {
                 "Aluminum" -> (3, 2.6889),
                 "Tungsten" -> (2, 19.35),
                 "Graphite" -> (12, 2.1),
-                "Iron" -> (3, 7.874)
+                "Iron"     -> (3, 7.874)
             )
 
         'test_sortByHeavyweight - {
-            assert(Exercises.sortByHeavyweight(balls) == Seq("Aluminum", "Iron", "Graphite", "Tungsten"))
+            assert(Exercises.sortByHeavyweight(balls) == Seq("Aluminum", "Iron", "Tungsten", "Graphite"))
         }
     }
 }

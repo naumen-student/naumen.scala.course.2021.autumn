@@ -78,6 +78,6 @@ object Exercises {
         )
 
     def sortByHeavyweight(ballsArray: Map[String, (Int, Double)] = balls): Seq[String] =
-        ballsArray.toSeq.map { case (n, (r, d)) => (n, r * d) }.sortBy(_._2).map(_._1)
+        ballsArray.toSeq.map { case (n, (r, d)) => (n, (r^3) * d) }.sortBy(_._2).map(_._1)
 
 }
