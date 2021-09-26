@@ -1,1 +1,0 @@
-scalac -bootclasspath C:\Users\hoora\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.13.6.jar -classpath C:\Users\hoora\Documents\scala\homeworks\homework_1\task_3\target\scala-2.13\classes C:\Users\hoora\Documents\scala\homeworks\homework_1\task_3\src\main\scala\example\Main.scala
