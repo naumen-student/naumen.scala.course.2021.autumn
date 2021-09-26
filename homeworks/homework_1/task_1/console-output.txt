@@ -1,0 +1,28 @@
+Microsoft Windows [Version 10.0.19043.1055]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+C:\Users\Max>scala
+Welcome to Scala 2.12.10 (OpenJDK 64-Bit Server VM, Java 16.0.1).
+Type in expressions for evaluation. Or try :help.
+
+scala> println("Hello Scala! This is Maxim Dyachenko")
+Hello Scala! This is Maxim Dyachenko
+
+scala> println("Hola Scala! This is Maxim Dyachenko")
+Hola Scala! This is Maxim Dyachenko
+
+scala> println("Guten tag Scala! This is Maxim Dyachenko")
+Guten tag Scala! This is Maxim Dyachenko
+
+scala>
+
+scala> println("Hello Scala! This is oknehcayD mixaM")
+Hello Scala! This is oknehcayD mixaM
+
+scala> println("Hola Scala! This is oknehcayD mixaM")
+Hola Scala! This is oknehcayD mixaM
+
+scala> println("Guten tag Scala! This is oknehcayD mixaM")
+Guten tag Scala! This is oknehcayD mixaM
+
+scala>
