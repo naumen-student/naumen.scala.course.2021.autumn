@@ -1,4 +1,7 @@
+import scala.collection.mutable.ArrayBuffer
+
 object Exercises {
+    import Array._
 
     /*ПРИМЕР*/
     /*Реализовать функцию, которая возвращает все целые числа в заданном диапазоне (от iForm до iTo), которые делятся
@@ -16,7 +19,33 @@ object Exercises {
     /*Реализовать функцию, которая возвращает сумму всех целых чисел в заданном диапазоне (от iForm до iTo), которые делятся
     на 3 или на 5.*/
     /*Реализовать юнит-тесты в src/test/scala для данной функции.*/
-    def sumOfDivBy3Or5(iFrom: Int, iTo: Int): Long = ???
+    def sumOfDivBy3Or5(iFrom: Int, iTo: Int): Long = {
+        if (iFrom > iTo) 0
+        var extra = iFrom % 3
+        val div3 = if (extra != 0) iFrom + 3 - extra else iFrom
+        extra = iFrom % 5
+        val div5 = if (extra != 0) iFrom + 5 - extra else iFrom
+        var sum : Long = 0
+        var i = 0
+        var check3 = true
+        var check5 = true
+        while (check3 || check5){
+            val first = div3 + i * 3
+            if (first <= iTo) {
+                sum += first
+            } else {
+                check3 = false
+            }
+            val second = div5 + i * 5
+            if (second <= iTo & second % 3 != 0) {
+                sum += second
+            } else {
+                check5 = false
+            }
+            i += 1
+        }
+        sum
+    }
 
 
 
@@ -25,7 +54,22 @@ object Exercises {
     Число 80 раскладывается на множители 1 * 2 * 2 * 2 * 2 * 5, результат выполнения функции => Seq(2, 5).
     Число 98 можно разложить на множители 1 * 2 * 7 * 7, результат выполнения функции => Seq(2, 7).*/
     /*Реализовать юнит-тесты в src/test/scala для данной функции.*/
-    def primeFactor(number: Int): Seq[Int] = ???
+    def primeFactor(number: Int): Seq[Int] = {
+        var num = if (number > 0) number else number * -1
+        var arr = range(2, math.sqrt(num).toInt)
+        if (arr.size == 0) return Seq[Int]()
+        val result = ArrayBuffer.empty[Int]
+        while (true) {
+            if (num % arr(0) == 0) result.append(arr(0))
+            while (num % arr(0) == 0 & num != 0) {
+                num = num / arr(0)
+            }
+            val filt = arr(0)
+            arr = arr.filter(x => x % filt != 0)
+            if (arr.size == 0) return result
+        }
+        Seq[Int]()
+    }
 
 
 
@@ -40,15 +84,17 @@ object Exercises {
     def abs(vec: Vector2D): Double = java.lang.Math.sqrt(vec.x * vec.x + vec.y * vec.y)
     def scalar(vec0: Vector2D, vec1: Vector2D): Double = vec0.x * vec1.x + vec0.y * vec1.y
     def cosBetween(vec0: Vector2D, vec1: Vector2D): Double = scalar(vec0, vec1) / abs(vec0) / abs(vec1)
-    //def sumByFunc(leftVec0: Vector2D, leftVec1: Vector2D, ???, rightVec0: Vector2D, rightVec1: Vector2D) = ???
-    /*
+    def sumByFunc(leftVec0: Vector2D, leftVec1: Vector2D, func : (Vector2D,Vector2D) => Double, rightVec0: Vector2D, rightVec1: Vector2D) = {
+        func(leftVec0, leftVec1) + func(rightVec1, rightVec0)
+    }
+
     def sumScalars(leftVec0: Vector2D, leftVec1: Vector2D, rightVec0: Vector2D, rightVec1: Vector2D): Double =
         sumByFunc(leftVec0, leftVec1, scalar, rightVec0, rightVec1)
-    */
-    /*
+
+
     def sumCosines(leftVec0: Vector2D, leftVec1: Vector2D, rightVec0: Vector2D, rightVec1: Vector2D): Double =
         sumByFunc(leftVec0, leftVec1, cosBetween, rightVec0, rightVec1)
-    */
+
 
 
 
@@ -71,6 +117,13 @@ object Exercises {
             "Chrome" ->   (3,   7.18),   "Cesium" ->    (7,   1.873), "Zirconium" -> (3,   6.45)
         )
 
-    def sortByHeavyweight(ballsArray: Map[String, (Int, Double)] = balls): Seq[String] = ???
+    def sortByHeavyweight(ballsArray: Map[String, (Int, Double)] = balls): Seq[String] = {
+        def getVolume(ball : (String,(Int,Double))) :  Double = {
+            val r = ball._2._1
+            val density = ball._2._2
+            (4/3)*r*r*r*java.lang.Math.PI * density
+        }
+        ballsArray.toSeq.sortWith(getVolume(_) < getVolume(_)).toMap.keySet.toSeq
+    }
 
 }
