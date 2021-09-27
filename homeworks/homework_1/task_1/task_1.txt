@@ -1,0 +1,32 @@
+Microsoft Windows [Version 10.0.19043.1165]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+C:\Users\Catherine>scala
+Welcome to Scala 2.12.10 (OpenJDK 64-Bit Server VM, Java 1.8.0_292).
+Type in expressions for evaluation. Or try :help.
+
+scala> var name = "Katya Rudenok"
+name: String = Katya Rudenok
+
+scala> def hello(x: String = "Hello", y: String = name) = println(x + " Scala! This is " + y)
+hello: (x: String, y: String)Unit
+
+scala> hello()
+Hello Scala! This is Katya Rudenok
+
+scala> hello(x = "Hola")
+Hola Scala! This is Katya Rudenok
+
+scala> hello(x = "Shalom")
+Shalom Scala! This is Katya Rudenok
+
+scala> hello(x = "Hola", y = name.reverse)
+Hola Scala! This is koneduR aytaK
+
+scala> hello(x = "Shalom", y = name.reverse)
+Shalom Scala! This is koneduR aytaK
+
+scala> hello(y = name.reverse)
+Hello Scala! This is koneduR aytaK
+
+scala>
