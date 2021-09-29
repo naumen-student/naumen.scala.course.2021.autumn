@@ -1,0 +1,31 @@
+MacBook-Pro-Aleksandr:naumen.scala.course.2021.autumn aleksandrmysinskij$ scala
+Welcome to Scala 2.13.6 (OpenJDK 64-Bit Server VM, Java 1.8.0_292).
+Type in expressions for evaluation. Or try :help.
+
+scala> val a = "Hello Scala! This is"
+val a: String = Hello Scala! This is
+
+scala> val name = "Denis Myshinskii"
+val name: String = Denis Myshinskii
+
+scala> print(a+ ' '+ name)
+Hello Scala! This is Denis Myshinskii
+scala> val b = a.replace("Hello", "Hola")
+val b: String = Hola Scala! This is
+
+scala> print(b + ' ' + name)
+Hola Scala! This is Denis Myshinskii
+
+scala> val c = b.replace("Hola", "Aloha")
+val c: String = Aloha Scala! This is
+
+scala> print(c + ' ' + name)
+Aloha Scala! This is Denis Myshinskii
+scala> val name_rev = name.reverse
+val name_rev: String = iiksnihsyM sineD
+
+scala> print(a + ' '+ name_rev + '\n' + b + ' ' + name_rev + '\n' + c + ' ' + name_rev)
+Hello Scala! This is iiksnihsyM sineD
+Hola Scala! This is iiksnihsyM sineD
+Aloha Scala! This is iiksnihsyM sineD
+scala> 
