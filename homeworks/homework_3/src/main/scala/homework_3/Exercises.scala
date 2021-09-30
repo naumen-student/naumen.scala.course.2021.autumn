@@ -68,8 +68,14 @@ object Exercises {
      * Реализуйте на основе нее 3 варианта суммирования 2х чисел, отличающиеся способом передачи этих 2х чисел в функцию sumIntegers.
      * Как минимум одна из реализаций должна использовать тип данных (класс) написанный вами самостоятельно.
      */
-    case class Couple[T](first: T, second: T) extends Iterable[T] {
-        //override def length: Int = 2
+    case class Couple[T](first: T, second: T) extends Seq[T] {
+        override def length: Int = 2
+
+        override def apply(idx: Int): T = {
+            if (idx == 0) first
+            else if (idx == 1) second
+            else throw new IndexOutOfBoundsException(s"Got index ${idx}, expected 0 or 1")
+        }
 
         override def iterator: Iterator[T] = new AbstractIterator[T] { // мы этого на лекции не делали
             private var nextInd = 0
