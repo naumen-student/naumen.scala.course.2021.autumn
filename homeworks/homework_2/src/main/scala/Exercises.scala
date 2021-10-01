@@ -16,7 +16,12 @@ object Exercises {
     /*Реализовать функцию, которая возвращает сумму всех целых чисел в заданном диапазоне (от iForm до iTo), которые делятся
     на 3 или на 5.*/
     /*Реализовать юнит-тесты в src/test/scala для данной функции.*/
-    def sumOfDivBy3Or5(iFrom: Int, iTo: Int): Long = ???
+    def sumOfDivBy3Or5(iFrom: Int, iTo: Int): Long = {
+        var sum: Long = 0
+        for {i <- iFrom to iTo if i % 3 == 0 || i % 5 == 0}
+            sum += i
+        sum
+    }
 
 
 
@@ -25,7 +30,32 @@ object Exercises {
     Число 80 раскладывается на множители 1 * 2 * 2 * 2 * 2 * 5, результат выполнения функции => Seq(2, 5).
     Число 98 можно разложить на множители 1 * 2 * 7 * 7, результат выполнения функции => Seq(2, 7).*/
     /*Реализовать юнит-тесты в src/test/scala для данной функции.*/
-    def primeFactor(number: Int): Seq[Int] = ???
+    def getPrimeNumbers(topNumber: Int): Seq[Int] = {
+        val length: Int = topNumber + 1
+        val numbers = new Array[Int](length)
+        for {i <- 0 until length} numbers(i) = i
+        for {i <- 2 until length} {
+            var nextNumber = numbers(i) + numbers(i)
+            while(nextNumber < length) {
+                numbers(nextNumber) = length + 1
+                nextNumber += numbers(i)
+            }
+        }
+        for {primeNumber <- numbers
+             if primeNumber != length + 1 && primeNumber > 1} yield primeNumber
+    }
+
+
+    def primeFactor(number: Int): Seq[Int] = {
+        var calculated = Seq[Int]()
+        if (number < 2) return calculated
+        for {primeNumber <- getPrimeNumbers(number / 2)} {
+            if (number % primeNumber == 0 && !(calculated contains primeNumber)) {
+                calculated = calculated :+ primeNumber
+            }
+        }
+        for {number <- calculated} yield number
+        }
 
 
 
@@ -40,15 +70,17 @@ object Exercises {
     def abs(vec: Vector2D): Double = java.lang.Math.sqrt(vec.x * vec.x + vec.y * vec.y)
     def scalar(vec0: Vector2D, vec1: Vector2D): Double = vec0.x * vec1.x + vec0.y * vec1.y
     def cosBetween(vec0: Vector2D, vec1: Vector2D): Double = scalar(vec0, vec1) / abs(vec0) / abs(vec1)
-    //def sumByFunc(leftVec0: Vector2D, leftVec1: Vector2D, ???, rightVec0: Vector2D, rightVec1: Vector2D) = ???
-    /*
+
+    def sumByFunc(leftVec0: Vector2D, leftVec1: Vector2D,
+                  f: (Vector2D, Vector2D) => Double,
+                  rightVec0: Vector2D, rightVec1: Vector2D): Double = {
+        f(leftVec0, leftVec1) + f(rightVec0, rightVec1)
+    }
+
     def sumScalars(leftVec0: Vector2D, leftVec1: Vector2D, rightVec0: Vector2D, rightVec1: Vector2D): Double =
         sumByFunc(leftVec0, leftVec1, scalar, rightVec0, rightVec1)
-    */
-    /*
     def sumCosines(leftVec0: Vector2D, leftVec1: Vector2D, rightVec0: Vector2D, rightVec1: Vector2D): Double =
         sumByFunc(leftVec0, leftVec1, cosBetween, rightVec0, rightVec1)
-    */
 
 
 
@@ -71,6 +103,23 @@ object Exercises {
             "Chrome" ->   (3,   7.18),   "Cesium" ->    (7,   1.873), "Zirconium" -> (3,   6.45)
         )
 
-    def sortByHeavyweight(ballsArray: Map[String, (Int, Double)] = balls): Seq[String] = ???
+    def createBallDiffMap(ballsMap: Map[String, (Int, Double)]): Map[String, Double] = {
+        /*Если отсортированный ряд чисел разделить на одно число, порядок чисел (и связанных с ними шариков) сохранится.
+        * Разделим объем (следовательно, и массу) всех шариков на 4/3*PI.*/
+        val ballDiff = scala.collection.mutable.Map[String, Double]()
+        var diffVolume: Double = 0
+        var diffMass: Double = 0
+        for {ball <- ballsMap} {
+            diffVolume = Math.pow(ball._2._1, 3)
+            diffMass = diffVolume * ball._2._2
+            ballDiff.put(ball._1, diffMass)
+        }
+        ballDiff.toMap
+    }
+
+    def sortByHeavyweight(ballsArray: Map[String, (Int, Double)] = balls): Seq[String] = {
+        val sortedBalls: Seq[(String, Double)] = createBallDiffMap(ballsArray).toSeq.sortBy(_._2)
+        for {ball <- sortedBalls} yield ball._1
+    }
 
 }
