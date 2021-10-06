@@ -11,4 +11,6 @@ class Table(val width: Int, val height: Int) {
     else
       Option(cells(row)(column)) //Почему нельзя вернуть просто Cell
   }
+
+  def setCell(row: Int, column: Int, cell: Cell) = cells(row)(column) = cell
 }
