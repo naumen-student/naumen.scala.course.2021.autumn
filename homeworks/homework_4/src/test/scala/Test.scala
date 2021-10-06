@@ -23,17 +23,17 @@ object Test extends TestSuite {
             assert(table.getCell(1, 0).map(_.toString) == Some("empty"))
             assert(table.getCell(1, 1).map(_.toString) == Some("2147483647"))
         }
-        //        'test_stringCell - {
-        //            val table = new Table(2, 2)
-        //            val cellStr01 = new StringCell("01")
-        //            val cellStr10 = new StringCell("10")
-        //            table.setCell(0, 1, cellStr01)
-        //            table.setCell(1, 0, cellStr10)
-        //            assert(table.getCell(0, 0).map(_.toString) == Some("empty"))
-        //            assert(table.getCell(0, 1).map(_.toString) == Some("01"))
-        //            assert(table.getCell(1, 0).map(_.toString) == Some("10"))
-        //            assert(table.getCell(1, 1).map(_.toString) == Some("empty"))
-        //        }
+                'test_stringCell - {
+                    val table = new Table(2, 2)
+                    val cellStr01 = new StringCell("01")
+                    val cellStr10 = new StringCell("10")
+                    table.setCell(0, 1, cellStr01)
+                    table.setCell(1, 0, cellStr10)
+                    assert(table.getCell(0, 0).map(_.toString) == Some("empty"))
+                    assert(table.getCell(0, 1).map(_.toString) == Some("01"))
+                    assert(table.getCell(1, 0).map(_.toString) == Some("10"))
+                    assert(table.getCell(1, 1).map(_.toString) == Some("empty"))
+                }
         //        'test_referenceCell - {
         //            val table = new Table(3, 3)
         //            /*ix = 0*/

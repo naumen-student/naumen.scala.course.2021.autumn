@@ -9,3 +9,7 @@ class EmptyCell extends Cell{
 class NumberCell(val value: Int) extends Cell{
   override def toString: String = value.toString
 }
+
+class StringCell(val value: String) extends Cell{
+  override def toString: String = value.toString
+}
