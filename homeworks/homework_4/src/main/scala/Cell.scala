@@ -17,14 +17,14 @@ class StringCell(val value: String) extends Cell{
 class ReferenceCell(val ix: Int, val iy: Int, val table: Table) extends Cell{
 
   @tailrec
-  private[this] def getContent(x: Int, y: Int, t: Table): String = t.getCell(x, y).get match {
+  private[this] def getContent(x: Int, y: Int, t: Table, visited : Seq[(Int, Int, Table)]): String = t.getCell(x, y).get match {
     case null => "outOfRange"
     case ref: ReferenceCell => {
-      if (ref == this) "cyclic"
-      else getContent(ref.ix, ref.iy, ref.table)
+      if (visited.contains((ref.ix, ref.iy, ref.table))) "cyclic"
+      else getContent(ref.ix, ref.iy, ref.table, (ref.ix, ref.iy, ref.table) +: visited)
     }
     case r: Cell => r.toString
   }
 
-  override def toString: String = getContent(ix, iy, table)
+  override def toString: String = getContent(ix, iy, table, Seq())
 }
