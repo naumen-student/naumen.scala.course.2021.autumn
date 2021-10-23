@@ -10,7 +10,6 @@ class Table(width: Int, height: Int) {
   def setCell(ix: Int, iy: Int, cell: Cell): Unit = getTableExistingIdx(ix, iy).foreach(cells(_) = cell)
 
   private def getTableExistingIdx(ix: Int, iy: Int): Option[Int] = {
-    val idx = ix + iy * width
-    if (idx < totalLength && idx > -1) Some(idx) else None
+    if (ix >= 0 && ix < width && iy >= 0 && iy < height) Some(ix + iy * width) else None
   }
 }
