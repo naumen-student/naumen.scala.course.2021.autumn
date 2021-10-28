@@ -7,10 +7,6 @@ object Exercises {
 
   case class Dog(override val name: String) extends Animal
 
-  def addToCats[T >: Cat](cats: List[Cat], other: List[T]): List[T] = {
-    cats ++ other
-  }
-
   case class Shelter[+T <: Animal](animals: List[T]) {
     def +[Q >: T <: Animal](newAnimal: Q): Shelter[Q] = {
       Shelter(animals ++ List(newAnimal))
