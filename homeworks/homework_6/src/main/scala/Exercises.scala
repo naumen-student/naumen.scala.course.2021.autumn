@@ -9,7 +9,9 @@ object Exercises {
    * @param idx
    * @return
    */
-  def fibonacci4Index(idx: Int): Int = ???
+  val fib: Stream[Int] = 0 #:: 1 #:: fib.zip(fib.tail).map(p => p._1 + p._2)
+
+  def fibonacci4Index(idx: Int): Int = fib(idx)
 
   def fibonacci(idx: Int): Seq[Int] = ???
 
