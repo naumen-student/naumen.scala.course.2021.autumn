@@ -13,7 +13,11 @@ object Exercises {
 
   def fibonacci4Index(idx: Int): Int = fib(idx)
 
-  def fibonacci(idx: Int): Seq[Int] = ???
+  def fibonacci(idx: Int): Seq[Int] = idx match {
+    case 0 => Seq(0)
+    case 1 => Seq(0, 1)
+    case i => (2 to i).foldLeft(Seq(0, 1))((seq, _) => seq :+ (seq.init.last + seq.last))
+  }
 
   lazy val MORSE = Map("A" -> ".-", "B" -> "-...", "C" -> "-.-.", "D" -> "-..", "E" -> ".", "F" -> "..-.",
                        "G" -> "--.", "H" -> "....", "I" -> "..", "J" -> ".---", "K" -> "-.-", "L" -> ".-..",
