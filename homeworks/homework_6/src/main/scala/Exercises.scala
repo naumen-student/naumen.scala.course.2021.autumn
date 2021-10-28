@@ -25,7 +25,10 @@ object Exercises {
                        "S" -> "...", "T" -> "-", "U" -> "..-", "V" -> "...-", "W" -> ".--", "X" -> "-..-",
                        "Y" -> "-.--", "Z" -> "--..")
 
-  def morse(text: String): String = ???
+  def morse(text: String): String = text.last match {
+    case '.'|'!'|'?' => text.init.map(l => MORSE.getOrElse(l.toString.toUpperCase, l)).mkString(" ") + text.last
+    case _ => text.map(l => MORSE.getOrElse(l.toString.toUpperCase, l)).mkString(" ")
+  }
 
 
   def wordReverse(text: String): String = ???
