@@ -31,6 +31,15 @@ object Exercises {
   }
 
 
-  def wordReverse(text: String): String = ???
+  def wordReverse(text: String): String = {
+    val splited = text.split("[ .,!?]+")
+    println(splited.mkString("|"))
+    val punct = text.split("[a-zA-ZА-Яа-я]+").reverse.init.reverse
+    println(punct.mkString("|"))
+    splited.map {
+      case x if x.head.isUpper => x.toLowerCase.reverse.capitalize
+      case x => x.reverse
+    }.zip(punct).map{case (str, s) => s"$str$s"}.mkString("")
+  }
 
 }
