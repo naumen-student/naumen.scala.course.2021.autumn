@@ -7,7 +7,6 @@ object Exercises {
 
   case class Dog(override val name: String) extends Animal
 
-
   case class Shelter[T <: Animal](animals: List[T]) {
     def feed(food: Food[T]): List[String] = {
       settlersAnimals.map(x => food.feed(x))
