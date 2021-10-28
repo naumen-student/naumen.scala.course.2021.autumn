@@ -1,7 +1,7 @@
 object Exercises {
 
 
-  def reverse[T](seq: Seq[T]): Seq[T] = ???
+  def reverse[T](seq: Seq[T]): Seq[T] = seq.reverse
 
   /**
    * https://ru.wikipedia.org/wiki/Числа_Фибоначчи
