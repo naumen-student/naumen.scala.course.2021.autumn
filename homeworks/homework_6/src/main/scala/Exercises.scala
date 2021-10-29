@@ -1,4 +1,4 @@
-// А где в заданиях коллекции?
+// Почему в hw на коллекции только Seq/List/String?
 // ▒▒▒▒▒▒▒▒▄▄▄▄▄▄▄▄▒▒▒▒▒▒▒▒
 // ▒▒▒▒▒▄█▀▀░░░░░░▀▀█▄▒▒▒▒▒
 // ▒▒▒▄█▀▄██▄░░░░░░░░▀█▄▒▒▒
@@ -53,7 +53,7 @@ object Exercises {
   }
 
   def reverseWord(word: String): String = {
-    if (word.length <= 2 || word.head.isLower == word.last.isLower) {
+    if (word.length <= 1 || word.head.isLower == word.last.isLower) {
       return word.reverse
     }
 
