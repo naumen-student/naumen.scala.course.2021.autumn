@@ -21,6 +21,7 @@ object Test extends TestSuite {
 
     assert(s5.getNames.toSet == Set("Garfield", "Barbos"))
 
+
     val s6: Shelter[Dog] = s2 + Dog("Barbos")
 
     assert(s6.getNames.toSet == Set("Goofy", "Barbos"))
@@ -52,7 +53,6 @@ object Test extends TestSuite {
         "Kuzya eats meat"
       )
     )
-
   }
 
 }
