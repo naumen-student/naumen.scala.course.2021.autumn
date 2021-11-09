@@ -7,7 +7,11 @@ trait Monad[F[_]] {
 
     def map2[A, B, C](fa: F[A], fb: F[B])(f: (A, B) => C): F[C] = flatMap(fa)(a => flatMap(fb)(b => pure(f(a, b))))
 
-    def sequence[A](fas: List[F[A]]): F[List[A]] = ???
+    def sequence[A](fas: List[F[A]]): F[List[A]] = {
+        val empty_list = List.empty[A]
+        fas.foldLeft(pure(empty_list))((el,fa)=>
+            flatMap(fa)((a: A) =>
+                flatMap(el)(t=>pure(t:+a))))
 
     def compose[A, B, C](f: A => F[B])(g: B => F[C]): A => F[C] = ???
 }
