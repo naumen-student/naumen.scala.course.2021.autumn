@@ -1,3 +1,4 @@
+import scala.::
 
 trait Monad[F[_]] {
 
@@ -18,10 +19,13 @@ trait Monad[F[_]] {
   }
 
   def sequence[A](fas: List[F[A]]): F[List[A]] = {
-    ???
+    val emptyListMonad = pure(List.empty[A])
+    fas.foldRight(emptyListMonad)((fl, fr) => map2(fl, fr)(_ :: _))
   }
 
-  def compose[A, B, C](f: A => F[B])(g: B => F[C]): A => F[C] = ???
+  def compose[A, B, C](f: A => F[B])(g: B => F[C]): A => F[C] = {
+    a => flatMap(f(a))(g)
+  }
 }
 
 trait Functor[F[_]] {
@@ -30,6 +34,8 @@ trait Functor[F[_]] {
 
 object Functor {
   def functorFromMonad[F[_]](M: Monad[F]): Functor[F] = new Functor[F] {
-    def map[A, B](a: F[A])(f: A => B): F[B] = ???
+    def map[A, B](a: F[A])(f: A => B): F[B] = {
+      M.flatMap(a)(c => M.pure(f(c)))
+    }
   }
 }
