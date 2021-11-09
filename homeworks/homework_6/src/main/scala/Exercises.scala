@@ -5,7 +5,7 @@ import scala.collection.mutable.ListBuffer
 object Exercises {
 
   def reverse[T](seq: Seq[T]): Seq[T] = {
-    def reverseInner[T](result: List[T], list: Seq[T]) : Seq[T] = {
+    def reverseInner[T](result: Seq[T], list: Seq[T]) : Seq[T] = {
       list match {
         case Nil => result
         case el :: els => {reverseInner(el :: result, els)}
