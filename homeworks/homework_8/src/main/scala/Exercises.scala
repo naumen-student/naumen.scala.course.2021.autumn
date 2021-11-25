@@ -18,7 +18,6 @@ object Exercises {
       Right(value.toInt)
     else
       Left(value)
-    }
   }
 
   def IsNumeric(value: String) = value.forall(_.isDigit);
