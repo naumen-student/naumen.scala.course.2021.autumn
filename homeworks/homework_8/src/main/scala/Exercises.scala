@@ -11,6 +11,7 @@ object Exercises {
     def read[A](implicit reader: Read[A]): Either[String, A] = reader.read(value)
   }
 
+  
   implicit def StringRead: Read[String] = (value: String) => Right(value)
 
   implicit def IntRead: Read[Int] = (value: String) => {
