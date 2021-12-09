@@ -9,7 +9,11 @@ object ListOps {
    * @param f функция свёртывания. Применяется попарно к предыдущему результату применения и i-ому элементу списка
    * @return None - если список пустой
    */
-  def foldOption[T](f: (T, T) => T): DataList[T] => Option[T] = ???
+  def foldOption[T](f: (T, T) => T): DataList[T] => Option[T] = {
+    case DataList.EmptyList => None
+    case DataList.NonEmptyList(head, DataList.EmptyList) => Some(head)
+    case DataList.NonEmptyList(head, tail) => Some(f(head, foldOption(f)(tail).get))
+  }
 
 
   /**
@@ -22,7 +26,16 @@ object ListOps {
      */
     def sumT(a: T, b: T) = implicitly[Numeric[T]].plus(a, b)
 
-    ???
+    list match {
+      case DataList.EmptyList => implicitly[Numeric[T]].zero
+      case l => foldOption(sumT)(l).get
+    }
+  }
+
+  @tailrec
+  private def reverse[T](l: DataList[T])(buffer: DataList[T]): DataList[T] = l match {
+    case DataList.EmptyList => buffer
+    case  DataList.NonEmptyList(head, tail) => reverse(tail)(DataList.NonEmptyList(head, buffer))
   }
 
   /**
@@ -30,7 +43,12 @@ object ListOps {
    * @param f - фильтрующее правило (если f(a[i]) == true, то элемент остаётся в списке)
    */
   @tailrec
-  private def filterImpl[T](f: T => Boolean)(buffer: DataList[T])(l: DataList[T]): DataList[T] = ???
+  private def filterImpl[T](f: T => Boolean)(buffer: DataList[T])(l: DataList[T]): DataList[T] = l match {
+    case DataList.EmptyList => reverse(buffer)(DataList.EmptyList)
+    case DataList.NonEmptyList(head, tail) =>
+      if (!f(head)) filterImpl(f)(buffer)(tail)
+      else filterImpl(f)(DataList.NonEmptyList(head, buffer))(tail)
+  }
 
   final def filter[T](f: T => Boolean): DataList[T] => DataList[T] = filterImpl(f)(DataList.EmptyList)
 
@@ -43,6 +61,6 @@ object ListOps {
    * Используя композицию функций реализуйте collect. Collect - комбинация filter и map.
    * В качестве фильтрующего правила нужно использовать f.isDefinedAt
    */
-  def collect[A, B](f: PartialFunction[A, B]): DataList[A] => DataList[B] = ???
+  def collect[A, B](f: PartialFunction[A, B]): DataList[A] => DataList[B] = filter(f.isDefinedAt) andThen map(f.apply)
 
 }
