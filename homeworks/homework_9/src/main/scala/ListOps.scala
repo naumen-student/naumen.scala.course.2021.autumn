@@ -1,3 +1,5 @@
+import DataList.EmptyList
+
 import scala.annotation.tailrec
 
 object ListOps {
@@ -11,7 +13,7 @@ object ListOps {
    * @return None - если список пустой
    */
   def foldOption[T](f: (T, T) => T): DataList[T] => Option[T] = {
-    case DataList.NonEmptyList(head, tail) =>foldOption(f)(tail) match {
+    case DataList.NonEmptyList(head, tail) => foldOption(f)(tail) match {
       case Some(tail) => Some(f(head, tail))
       case None => Some(head)
     }
@@ -42,13 +44,22 @@ object ListOps {
    * @param f - фильтрующее правило (если f(a[i]) == true, то элемент остаётся в списке)
    */
   @tailrec
-  private def filterImpl[T](f: T => Boolean)(buffer: DataList[T])(l: DataList[T]): DataList[T] = l match {
-    case DataList.NonEmptyList(head, tail) => if (f(head)) {
-      filterImpl(f)(DataList.NonEmptyList(head, buffer))(tail)
-    } else {
-      filterImpl(f)(buffer)(tail)
+  private def filterImpl[T](f: T => Boolean)(buffer: DataList[T])(l: DataList[T]): DataList[T] = {
+    def reverseDataList[T](buffer: DataList[T])(l: DataList[T]): DataList[T] = l match {
+      case DataList.NonEmptyList(head, tail) => {
+        reverseDataList(DataList.NonEmptyList(head, buffer))(tail)
+      }
+      case _ => buffer
     }
-    case DataList.EmptyList => buffer
+
+    l match {
+      case DataList.NonEmptyList(head, tail) => if (f(head)) {
+        filterImpl(f)(DataList.NonEmptyList(head, buffer))(tail)
+      } else {
+        filterImpl(f)(buffer)(tail)
+      }
+      case DataList.EmptyList => reverseDataList(l)(buffer)
+    }
   }
 
   final def filter[T](f: T => Boolean): DataList[T] => DataList[T] = filterImpl(f)(DataList.EmptyList)
