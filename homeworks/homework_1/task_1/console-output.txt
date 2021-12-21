@@ -1,0 +1,17 @@
+hobbit@home:~$ scala
+Welcome to Scala 2.11.12 (OpenJDK 64-Bit Server VM, Java 11.0.11).
+Type in expressions for evaluation. Or try :help.
+
+scala> println("Hello Scala! This is ${здесь ваше имя}")
+Hello Scala! This is ${здесь ваше имя}
+
+scala> println("Guten tag Scala! This is ${здесь ваше имя}")
+Guten tag Scala! This is ${здесь ваше имя}
+
+scala> println("Hello Scala! This is ${здесь ваше имя}".reverse)
+}ями ешав ьседз{$ si sihT !alacS olleH
+
+scala> println("Guten tag Scala! This is ${здесь ваше имя}".reverse)
+}ями ешав ьседз{$ si sihT !alacS gat netuG
+
+scala> 
