@@ -1,0 +1,41 @@
+C:\Users\Петр Бронепоезд\naumen.scala.course.2021.autumn\homeworks\homework_1\task_1>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_301).
+Type in expressions for evaluation. Or try :help.
+
+scala> val name = "Andrey Bronnikov"
+name: String = Andrey Bronnikov
+
+scala> val greetings = "Hello"
+greetings: String = Hello
+
+scala> def hello(s: String, x: String): Unit = { println( s + " Scala! This is "+ x + ".")}
+hello: (s: String, x: String)Unit
+
+scala> hello(greetings,name)
+Hello Scala! This is Andrey Bronnikov.
+
+scala> val greetings_ru = "Privet"
+greetings_ru: String = Privet
+
+scala> val greetings_fr = "Bonjour"
+greetings_fr: String = Bonjour
+
+scala> hello(greetings_fr, name)
+Bonjour Scala! This is Andrey Bronnikov.
+
+scala> hello(greetings_ru, name)
+Privet Scala! This is Andrey Bronnikov.
+
+scala> val name_reversed = name.reverse
+name_reversed: String = vokinnorB yerdnA
+
+scala> hello(greetings,name_reversed)
+Hello Scala! This is vokinnorB yerdnA.
+
+scala> hello(greetings_fr,name_reversed)
+Bonjour Scala! This is vokinnorB yerdnA.
+
+scala> hello(greetings_ru,name_reversed)
+Privet Scala! This is vokinnorB yerdnA.
+
+

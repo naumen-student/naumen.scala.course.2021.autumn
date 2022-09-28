@@ -1,0 +1,32 @@
+[debug] [zinc] IncrementalCompile -----------
+[debug] IncrementalCompile.incrementalCompile
+[debug] previous = Stamps for: 1 products, 1 sources, 0 libraries
+[debug] current source = Set(${BASE}/src/main/scala/task_3/main.scala)
+[debug] > initialChanges = InitialChanges(Changes(added = Set(), removed = Set(), changed = Set(${BASE}/src/main/scala/task_3/main.scala), unmodified = ...),Set(),Set(),API Changes: Set())
+[debug] 
+[debug] Initial source changes:
+[debug] 	removed: Set()
+[debug] 	added: Set()
+[debug] 	modified: Set(${BASE}/src/main/scala/task_3/main.scala)
+[debug] Invalidated products: Set()
+[debug] External API changes: API Changes: Set()
+[debug] Modified binary dependencies: Set()
+[debug] Initial directly invalidated classes: Set(task_3.main)
+[debug] Sources indirectly invalidated by:
+[debug] 	product: Set()
+[debug] 	binary dep: Set()
+[debug] 	external source: Set()
+[debug] all 1 sources are invalidated
+[debug] Initial set of included nodes: task_3.main
+[debug] Recompiling all sources: number of invalidated sources > 50.0% of all sources
+[debug] compilation cycle 1
+[info] compiling 1 Scala source to C:\Users\Петр Бронепоезд\IdeaProjects\task_3\target\scala-2.13\classes ...
+[debug] Getting org.scala-sbt:compiler-bridge_2.13:1.5.7:compile for Scala 2.13.6
+[debug] [zinc] Running cached compiler 730ba7d0 for Scala compiler version 2.13.6
+[debug] [zinc] The Scala compiler is invoked with:
+[debug] 	-bootclasspath
+[debug] 	C:\Users\Петр Бронепоезд\.jdks\corretto-1.8.0_302\jre\lib\resources.jar;C:\Users\Петр Бронепоезд\.jdks\corretto-1.8.0_302\jre\lib\rt.jar;C:\Users\Петр Бронепоезд\.jdks\corretto-1.8.0_302\jre\lib\sunrsasign.jar;C:\Users\Петр Бронепоезд\.jdks\corretto-1.8.0_302\jre\lib\jsse.jar;C:\Users\Петр Бронепоезд\.jdks\corretto-1.8.0_302\jre\lib\jce.jar;C:\Users\Петр Бронепоезд\.jdks\corretto-1.8.0_302\jre\lib\charsets.jar;C:\Users\Петр Бронепоезд\.jdks\corretto-1.8.0_302\jre\lib\jfr.jar;C:\Users\Петр Бронепоезд\.jdks\corretto-1.8.0_302\jre\classes;C:\Users\Петр Бронепоезд\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-library\2.13.6\scala-library-2.13.6.jar
+[debug] 	-classpath
+[debug] 	C:\Users\Петр Бронепоезд\IdeaProjects\task_3\target\scala-2.13\classes
+[debug] Scala compilation took 0.2288273 s
+[info] done compiling
