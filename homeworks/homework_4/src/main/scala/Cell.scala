@@ -1,0 +1,29 @@
+trait Cell
+
+class EmptyCell extends Cell {
+  override def toString: String = "empty";
+}
+
+class NumberCell(number: Int) extends Cell {
+  override def toString: String = number.toString
+}
+
+class StringCell(string: String) extends Cell {
+  override def toString: String = string
+}
+
+class ReferenceCell(ix: Int, iy: Int, table: Table) extends Cell {
+  def getCellByRef: Option[Cell] = {
+    table.getCell(ix, iy);
+  }
+
+  override def toString: String = {
+    getCellByRef match {
+      case Some(cell: ReferenceCell) =>
+        if (cell.getCellByRef.contains(this)) "cyclic"
+        else cell.toString
+      case None => "outOfRange"
+      case Some(cell: Cell) => cell.toString
+    }
+  }
+}
