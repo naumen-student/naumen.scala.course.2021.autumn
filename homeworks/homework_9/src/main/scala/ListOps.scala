@@ -1,6 +1,7 @@
 import scala.annotation.tailrec
 
 object ListOps {
+  import DataList._
 
   /**
    * Функция fold "сворачивает" список из Т в один элемент типа Т.
@@ -9,8 +10,28 @@ object ListOps {
    * @param f функция свёртывания. Применяется попарно к предыдущему результату применения и i-ому элементу списка
    * @return None - если список пустой
    */
-  def foldOption[T](f: (T, T) => T): DataList[T] => Option[T] = ???
+  def foldOption[T](f: (T, T) => T): DataList[T] => Option[T] = {
+    @tailrec
+    def foldOptionInternal(f: (T, T) => T)(dataList: DataList[T]) : Option[T] = dataList match {
+      case NonEmptyList(head, EmptyList) => Some(head)
+      case NonEmptyList(head1, NonEmptyList(head2, tail)) =>
+        foldOptionInternal(f)(NonEmptyList(f(head1, head2), tail))
+      case _ => None
+    }
+    foldOptionInternal(f)
+  }
 
+  //еще один способ имплементации
+  def foldOptionWithTailRec[T](f: (T, T) => T): DataList[T] => Option[T] =
+    foldOptionWithTailRecInternal(f).andThen(_.result)
+
+  import scala.util.control.TailCalls._
+  def foldOptionWithTailRecInternal[T](f: (T, T) => T): DataList[T] => TailRec[Option[T]] = {
+    case NonEmptyList(head, EmptyList) => done(Some(head))
+    case NonEmptyList(head1, NonEmptyList(head2, tail)) =>
+      tailcall(foldOptionWithTailRecInternal(f)(NonEmptyList(f(head1, head2), tail)))
+    case _ => done(None)
+  }
 
   /**
    * Используя foldOption[T](f: (T, T) => T) реализуйте суммирование всех элементов списка.
@@ -20,9 +41,14 @@ object ListOps {
     /**
      * Используйте для суммирования двух чисел любого типа (Int, Long, Double, Float etc)
      */
-    def sumT(a: T, b: T) = implicitly[Numeric[T]].plus(a, b)
+    // можно принимать (implicit n: Numeric[T]), но решила не менять сигнатуру, которая дана
+    val numeric = implicitly[Numeric[T]]
+    def sumT(a: T, b: T) = numeric.plus(a, b)
 
-    ???
+    foldOption(sumT)(list) match {
+      case Some(value) => value
+      case None => numeric.fromInt(0)
+    }
   }
 
   /**
@@ -30,7 +56,22 @@ object ListOps {
    * @param f - фильтрующее правило (если f(a[i]) == true, то элемент остаётся в списке)
    */
   @tailrec
-  private def filterImpl[T](f: T => Boolean)(buffer: DataList[T])(l: DataList[T]): DataList[T] = ???
+  private def filterImpl[T](f: T => Boolean)(buffer: DataList[T])(l: DataList[T]): DataList[T] = {
+    @tailrec
+    def reverse(buffer: DataList[T], toReverse: DataList[T]): DataList[T] =
+      toReverse match {
+        case NonEmptyList(head, tail) =>
+          reverse(NonEmptyList(head, buffer), tail)
+        case _ => buffer
+      }
+
+    l match {
+      case NonEmptyList(head, tail) =>
+        val newBuffer = if (f(head)) NonEmptyList(head, buffer) else buffer
+        filterImpl(f)(newBuffer)(tail)
+      case _ => reverse(EmptyList, buffer)
+    }
+  }
 
   final def filter[T](f: T => Boolean): DataList[T] => DataList[T] = filterImpl(f)(DataList.EmptyList)
 
@@ -43,6 +84,6 @@ object ListOps {
    * Используя композицию функций реализуйте collect. Collect - комбинация filter и map.
    * В качестве фильтрующего правила нужно использовать f.isDefinedAt
    */
-  def collect[A, B](f: PartialFunction[A, B]): DataList[A] => DataList[B] = ???
-
+  def collect[A, B](f: PartialFunction[A, B]): DataList[A] => DataList[B] =
+    filter(f.isDefinedAt).andThen(map(f))
 }
