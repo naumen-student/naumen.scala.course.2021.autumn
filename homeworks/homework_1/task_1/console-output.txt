@@ -1,0 +1,121 @@
+←[34mLoading...←[39m
+Welcome to the Ammonite Repl 2.4.0 (Scala 2.13.6 Java 1.8.0_202)
+
+@ s = "Andrew"
+cmd0.sc:1: not found: value s
+val res0 = s = "Andrew"
+           ^
+Compilation Failed
+
+@ val s = "Andrew"
+s: String = "Andrew"
+
+@ s
+res1: String = "Andrew"
+
+@ def hello = println("Hello " + s)
+defined function hello
+
+@ hello
+Hello Andrew
+
+
+@ val nach = "Hello Scala!"
+nach: String = "Hello Scala!"
+
+@ val ser = "This is "
+ser: String = "This is "
+
+@ def hello = println (nach + ser + s)
+defined function hello
+
+@ hello
+Hello Scala!This is Andrew
+
+
+@ def hello = println("Hello Scala! This is Andrew!")
+defined function hello
+
+@ hello
+Hello Scala! This is Andrew!
+
+
+@ val zam1 = "Hola!"
+zam1: String = "Hola!"
+
+@ val zam2 = "Guten tag!"
+zam2: String = "Guten tag!"
+
+@ def hello { println(zam1 + ser + s) }
+defined function hello
+
+@ hello
+Hola!This is Andrew
+
+
+@ val name = "Andrew Yaroshenko -> "
+name: String = "Andrew Yaroshenko -> "
+
+@ val _1 = "A"
+_1: String = "A"
+
+@ val _2 = "n"
+_2: String = "n"
+
+@ val _3 = "d"
+_3: String = "d"
+
+@ val _4 = "r"
+_4: String = "r"
+
+@ val _5 = "e"
+_5: String = "e"
+
+@ val _6 = "w"
+_6: String = "w"
+
+@ val _1_ = "Y"
+_1_: String = "Y"
+
+@ val _2_ = "r"
+_2_: String = "r"
+
+@ val _3_ = "o"
+_3_: String = "o"
+
+@ val _4_ = "s"
+_4_: String = "s"
+
+@ val _5_ = "h"
+_5_: String = "h"
+
+@ val _6_ = "e"
+_6_: String = "e"
+
+@ val _7_ = "n"
+_7_: String = "n"
+
+@ val _8_ = "k"
+_8_: String = "k"
+
+@ val _9_ = "o"
+_9_: String = "o"
+
+@ val fullName = List(_1, _2, _3, _4, _5, _6)
+fullName: List[String] = List("A", "n", "d", "r", "e", "w")
+
+@ fullName
+res31: List[String] = List("A", "n", "d", "r", "e", "w")
+
+@ def priv { println(nach + ser + fullName) }
+defined function priv
+
+@ priv
+Hello Scala!This is List(A, n, d, r, e, w)
+
+
+@ def privetstvie { println(nach + ser + _9_ + _8_ + _7_ + _6_ + _5_ + _4_ + _3_ + _2_ + _1_ + " " + _6 + _5 + _4 + _3 + _2 + _1 + "! ")}
+defined function privetstvie
+
+@ privetstvie
+Hello Scala!This is oknehsorY werdnA!
