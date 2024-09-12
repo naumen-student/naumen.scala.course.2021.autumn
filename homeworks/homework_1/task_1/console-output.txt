@@ -1,0 +1,61 @@
+Microsoft Windows [Version 10.0.17763.737]
+(c) Корпорация Майкрософт (Microsoft Corporation), 2018. Все права защищены.
+
+E:\Users\Igor>scala
+Welcome to Scala version 2.11.4 (Java HotSpot(TM) 64-Bit Server VM, Java 1.7.0_75).
+Type in expressions to have them evaluated.
+Type :help for more information.
+
+scala> println("Hello Scala! This is Eugene")
+Hello Scala! This is Eugene
+
+scala> printf("%s Scala! This is Eugene", "Bonjour")
+Bonjour Scala! This is Eugene
+scala> var greetings = Array("Hello", "Hola", "Bonjour", "Zdarova")
+greetings: Array[String] = Array(Hello, Hola, Bonjour, Zdarova)
+
+scala> greetings
+res2: Array[String] = Array(Hello, Hola, Bonjour, Zdarova)
+
+scala> greetings(0)
+res3: String = Hello
+
+scala> greetings(2)
+res4: String = Bonjour
+
+scala> greetings.foreach(greeting => printf("%s Scala! This is Eugene", greeting))
+Hello Scala! This is EugeneHola Scala! This is EugeneBonjour Scala! This is EugeneZdarova Scala! This is Eugene
+scala> greetings.foreach(greeting => println(s"$greeting Scala! This is Eugene", greeting))
+(Hello Scala! This is Eugene,Hello)
+(Hola Scala! This is Eugene,Hola)
+(Bonjour Scala! This is Eugene,Bonjour)
+(Zdarova Scala! This is Eugene,Zdarova)
+
+scala> greetings.foreach(greeting => println(s"$greeting Scala! This is Eugene!!!"))
+Hello Scala! This is Eugene!!!
+Hola Scala! This is Eugene!!!
+Bonjour Scala! This is Eugene!!!
+Zdarova Scala! This is Eugene!!!
+
+scala> greetings.foreach(greeting => println(s"$greetingScala! This is Eugene!!!"))
+<console>:9: error: not found: value greetingScala
+              greetings.foreach(greeting => println(s"$greetingScala! This is Eugene!!!"))
+                                                       ^
+
+scala> greetings.foreach(greeting => println(greeting + " Scala! This is " + "Eugene".reverse)
+     | )
+Hello Scala! This is eneguE
+Hola Scala! This is eneguE
+Bonjour Scala! This is eneguE
+Zdarova Scala! This is eneguE
+
+scala> var myName = "Eugene"
+myName: String = Eugene
+
+scala> greetings.foreach(greeting => println(greeting + " Scala! This is " + myName.reverse))
+Hello Scala! This is eneguE
+Hola Scala! This is eneguE
+Bonjour Scala! This is eneguE
+Zdarova Scala! This is eneguE
+
+scala>
