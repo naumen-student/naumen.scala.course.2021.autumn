@@ -1,0 +1,11 @@
+[info] Packaging C:\Users\Пользователь\OneDrive\Рабочий стол\task\target\scala-2.13\task_2.13-0.1.jar ...
+[debug] Input file mappings:
+[debug] 	task
+[debug] 	  C:\Users\Пользователь\OneDrive\Рабочий стол\task\target\scala-2.13\classes\task
+[debug] 	task\Main$.class
+[debug] 	  C:\Users\Пользователь\OneDrive\Рабочий стол\task\target\scala-2.13\classes\task\Main$.class
+[debug] 	task\Main$delayedInit$body.class
+[debug] 	  C:\Users\Пользователь\OneDrive\Рабочий стол\task\target\scala-2.13\classes\task\Main$delayedInit$body.class
+[debug] 	task\Main.class
+[debug] 	  C:\Users\Пользователь\OneDrive\Рабочий стол\task\target\scala-2.13\classes\task\Main.class
+[info] Done packaging.

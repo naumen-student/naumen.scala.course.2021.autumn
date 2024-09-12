@@ -1,0 +1,98 @@
+C:\Users\Пользователь>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_291).
+Type in expressions for evaluation. Or try :help.
+
+scala> println("Hello Scala! This is Ira Serebrennikova!")
+Hello Scala! This is Ira Serebrennikova!
+
+scala> val name = "Ira Serebrennikova"
+name: String = Ira Serebrennikova
+
+scala> println("Hello Scala! This is " + name)
+Hello Scala! This is Ira Serebrennikova
+
+scala> val str = "Hello Scala! This is "
+str: String = "Hello Scala! This is "
+
+scala> println(str + name)
+Hello Scala! This is Ira Serebrennikova
+
+scala> (str + name).foreach(println)
+H
+e
+l
+l
+o
+
+S
+c
+a
+l
+a
+!
+
+T
+h
+i
+s
+
+i
+s
+
+I
+r
+a
+
+S
+e
+r
+e
+b
+r
+e
+n
+n
+i
+k
+o
+v
+a
+
+scala> str + name.foreach(println)
+I
+r
+a
+
+S
+e
+r
+e
+b
+r
+e
+n
+n
+i
+k
+o
+v
+a
+res4: String = Hello Scala! This is ()
+
+scala> println("Hi" + (str drop 5) + name)
+Hi Scala! This is Ira Serebrennikova
+
+scala> println(str)
+Hello Scala! This is
+
+scala> println("Hola" + (str drop 5) + name)
+Hola Scala! This is Ira Serebrennikova
+
+scala> println(str + name.reverse)
+Hello Scala! This is avokinnerbereS arI
+
+scala> println("Hi" + (str drop 5) + name.reverse)
+Hi Scala! This is avokinnerbereS arI
+
+scala> println("Hola" + (str drop 5) + name.reverse)
+Hola Scala! This is avokinnerbereS arI

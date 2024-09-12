@@ -1,0 +1,1 @@
+scalac -bootclasspath C:\Users\Пользователь\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.13.6.jar -classpath C:\Users\Пользователь\OneDrive\Рабочий стол\task\target\scala-2.13\classes C:\Users\Пользователь\OneDrive\Рабочий стол\task\src\main\scala\task\Main.scala
