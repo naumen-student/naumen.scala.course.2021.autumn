@@ -1,0 +1,32 @@
+Welcome to Scala 2.13.6 (OpenJDK 64-Bit Server VM, Java 17).
+Type in expressions for evaluation. Or try :help.
+
+scala> val hello = "Hello Scala! This is Alisher"
+val hello: String = Hello Scala! This is Alisher
+
+scala> print(hello)
+Hello Scala! This is Alisher
+scala> val hola = "Hola Scala! This is Alisher"
+val hola: String = Hola Scala! This is Alisher
+
+scala> print(hola)
+Hola Scala! This is Alisher
+scala> val guten = "Guten tag Scala! This is Alisher"
+val guten: String = Guten tag Scala! This is Alisher
+
+scala> val helloReverse = "Hello Scala! This is rehsilA"
+val helloReverse: String = Hello Scala! This is rehsilA
+
+scala> print(helloReverse)
+Hello Scala! This is rehsilA
+scala> val holaReverse = "Hola Scala! This is rehsilA"
+val holaReverse: String = Hola Scala! This is rehsilA
+
+scala> print(holaReverse)
+Hola Scala! This is rehsilA
+scala> val gutenReverse = "Guten tag Scala! This is rehsilA"
+val gutenReverse: String = Guten tag Scala! This is rehsilA
+
+scala> print(gutenReverse)
+Guten tag Scala! This is rehsilA
+scala>
