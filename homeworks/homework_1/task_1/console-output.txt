@@ -1,0 +1,43 @@
+D:\Desktop\programming\scala_work\test>sbt console
+Не удается создать файл или папку.
+java.nio.file.NoSuchFileException: C:\Users\?Т??TВ?-??????\.sbt\1.0\java9-rt-ext-oracle_corporation_15_0_2\rt.jar
+        at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+        at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+        at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+        at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:235)
+        at java.base/java.nio.file.spi.FileSystemProvider.newOutputStream(FileSystemProvider.java:478)
+        at java.base/java.nio.file.Files.newOutputStream(Files.java:224)
+        at jdk.zipfs/jdk.nio.zipfs.ZipFileSystem.<init>(ZipFileSystem.java:156)
+        at jdk.zipfs/jdk.nio.zipfs.ZipFileSystemProvider.getZipFileSystem(ZipFileSystemProvider.java:125)
+        at jdk.zipfs/jdk.nio.zipfs.ZipFileSystemProvider.newFileSystem(ZipFileSystemProvider.java:106)
+        at java.base/java.nio.file.FileSystems.newFileSystem(FileSystems.java:338)
+        at java.base/java.nio.file.FileSystems.newFileSystem(FileSystems.java:287)
+        at xsbt.boot.Launch$.exportRt(Launch.scala:57)
+        at xsbt.boot.Launch$.apply(Launch.scala:28)
+        at xsbt.boot.Launch$.apply(Launch.scala:21)
+        at xsbt.boot.Boot$.runImpl(Boot.scala:78)
+        at xsbt.boot.Boot$.run(Boot.scala:73)
+        at xsbt.boot.Boot$.main(Boot.scala:21)
+        at xsbt.boot.Boot.main(Boot.scala)
+[error] [launcher] error during sbt launcher: java.nio.file.NoSuchFileException: C:\Users\?Т??TВ?-??????\.sbt\1.0\java9-rt-ext-oracle_corporation_15_0_2\rt.jar
+[info] Updated file D:\Desktop\programming\scala_work\test\project\build.properties: set sbt.version to 1.5.5
+[info] welcome to sbt 1.5.5 (Oracle Corporation Java 15.0.2)
+[info] loading project definition from D:\Desktop\programming\scala_work\test\project
+[info] set current project to test (in build file:/D:/Desktop/programming/scala_work/test/)
+[info] Starting scala interpreter...
+Welcome to Scala 2.12.14 (Java HotSpot(TM) 64-Bit Server VM, Java 15.0.2).
+Type in expressions for evaluation. Or try :help.
+
+scala> print("Hello Scala! This is Vitaliy Schava")
+Hello Scala! This is Vitaliy Schava
+scala> print("Hola Scala! This is Vitaliy Schava")
+Hola Scala! This is Vitaliy Schava
+scala> print("Guten tag Scala! This is Vitaliy Schava")
+Guten tag Scala! This is Vitaliy Schava
+scala> print("Hello Scala! This is yilatiV avahcS")
+Hello Scala! This is yilatiV avahcS
+scala> print("Halo Scala! This is yilatiV avahcS")
+Halo Scala! This is yilatiV avahcS
+scala> print("Guten tag Scala! This is yilatiV avahcS")
+Guten tag Scala! This is yilatiV avahcS
+scala>
