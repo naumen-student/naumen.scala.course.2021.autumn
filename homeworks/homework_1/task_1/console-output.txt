@@ -1,0 +1,47 @@
+C:\Users\Артём>scala
+Welcome to Scala 2.12.14 (Java HotSpot(TM) 64-Bit Server VM, Java 11.0.12).
+Type in expressions for evaluation. Or try :help.
+
+scala> println("Hello Scala! This is Artem")
+Hello Scala! This is Artem
+
+scala> println("Hola Scala! This is Artem")
+Hola Scala! This is Artem
+
+scala> println("Bonjour Scala! This is Artem")
+Bonjour Scala! This is Artem
+
+scala> println("Hello Scala! This is Artem Slivnyi")
+Hello Scala! This is Artem Slivnyi
+
+scala> println("Bonjour Scala! This is Artem Slivnyi")
+Bonjour Scala! This is Artem Slivnyi
+
+scala> println("Hola Scala! This is Artem Slivnyi")
+Hola Scala! This is Artem Slivnyi
+
+scala> var a = "Hello Scala! This is Artem Slivnyi"
+a: String = Hello Scala! This is Artem Slivnyi
+
+scala> var a1 = "Hello Scala! This is iynvilS metrA"
+a1: String = Hello Scala! This is iynvilS metrA
+
+scala> var b1 = "Bonjour Scala! This is iynvilS metrA"
+b1: String = Bonjour Scala! This is iynvilS metrA
+
+scala> var b = "Bonjour Scala! This is Artem Slivnyi"
+b: String = Bonjour Scala! This is Artem Slivnyi
+
+scala> println(a+b)
+Hello Scala! This is Artem SlivnyiBonjour Scala! This is Artem Slivnyi
+
+scala> println(a+' '+b)
+Hello Scala! This is Artem Slivnyi Bonjour Scala! This is Artem Slivnyi
+
+scala> println(b1+' '+a1)
+Bonjour Scala! This is iynvilS metrA Hello Scala! This is iynvilS metrA
+
+scala> println(0.0 + 1)
+1.0
+
+scala>
