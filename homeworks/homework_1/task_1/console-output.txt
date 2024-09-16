@@ -1,0 +1,33 @@
+C:\Users\Anna\Desktop\uni\scala\naumen.scala.course.2021.autumn>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_162).
+Type in expressions for evaluation. Or try :help.
+
+scala> var hello_words = Array("Hello", "Hi", "Hola")
+hello_words: Array[String] = Array(Hello, Hi, Hola)
+
+scala> var name = "Ann"
+name: String = Ann
+
+scala> var middle_part = "Scala! This is"
+middle_part: String = Scala! This is
+
+scala> println(s"${hello_words(0)} $middle_part $name")
+Hello Scala! This is Ann
+
+scala> println(s"${hello_words(1)} $middle_part $name")
+Hi Scala! This is Ann
+
+scala> println(s"${hello_words(2)} $middle_part $name")
+Hola Scala! This is Ann
+
+scala> name = name.reverse
+name: String = nnA
+
+scala> println(s"${hello_words(0)} $middle_part $name")
+Hello Scala! This is nnA
+
+scala> println(s"${hello_words(1)} $middle_part $name")
+Hi Scala! This is nnA
+
+scala> println(s"${hello_words(2)} $middle_part $name")
+Hola Scala! This is nnA
