@@ -1,0 +1,48 @@
+C:\Users\Loliconshik\.jdks\openjdk-14.0.2\bin\java.exe...
+scala> val name : String = "Alexander Lavrentiev";
+ 
+ val defaulHello : String = "Hello";
+ val guttenHello : String = "Guten tag";
+ val holaHello : String = "Hola";
+ val baseHelloString : String = "Scala! This is";
+ 
+ def hello(helloString : String, contentString: String, name : String) : String = {
+   return s"$helloString $contentString $name"
+ }
+val name: String = Alexander Lavrentiev
+
+scala> 
+scala> val defaulHello: String = Hello
+
+scala> val guttenHello: String = Guten tag
+
+scala> val holaHello: String = Hola
+
+scala> val baseHelloString: String = Scala! This is
+
+scala> 
+scala> def hello(helloString: String, contentString: String, name: String): String
+
+scala> println(hello(defaulHello, baseHelloString, name));
+ 
+Hello Scala! This is Alexander Lavrentiev
+
+scala> println(hello(guttenHello, baseHelloString, name));
+ 
+Guten tag Scala! This is Alexander Lavrentiev
+
+scala> println(hello(holaHello, baseHelloString, name));
+ 
+Hola Scala! This is Alexander Lavrentiev
+
+scala> println(hello(defaulHello, baseHelloString, name.reverse));
+ 
+Hello Scala! This is veitnervaL rednaxelA
+
+scala> println(hello(guttenHello, baseHelloString, name.reverse));
+ 
+Guten tag Scala! This is veitnervaL rednaxelA
+
+scala> println(hello(holaHello, baseHelloString, name.reverse));
+ 
+Hola Scala! This is veitnervaL rednaxelA
