@@ -1,0 +1,54 @@
+C:\Users\User>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_45).
+Type in expressions for evaluation. Or try :help.
+
+scala> println("Hello Scala! This is Lera")
+Hello Scala! This is Lera
+
+scala> var s = "Hello Scala! This is "
+s: String = "Hello Scala! This is "
+
+scala> var name = "Lera"
+name: String = Lera
+
+scala> println(s + name)
+Hello Scala! This is Lera
+
+scala> s = "Hi Scala! This is "
+s: String = Hi Scala! This is
+
+scala> println(s + name)
+Hi Scala! This is Lera
+
+scala> println(s + name.reverse)
+Hi Scala! This is areL
+
+scala> var newstr = s + name
+newstr: String = Hi Scala! This is Lera
+
+scala> s = "Hola" + s.slice(2, s.length)
+s: String = Hola Scala! This is
+
+scala> println(s + name)
+Hola Scala! This is Lera
+
+scala> println(s + name.reverse)
+Hola Scala! This is areL
+
+scala> def hello(s: String) = {
+     | println("Hello Scala! This is " + s)
+     | }
+hello: (s: String)Unit
+
+scala> hello("Lera")
+Hello Scala! This is Lera
+
+scala> def hello2(h: String, n: String) = {
+     | println(h + " Scala! This is " + n)
+     | }
+hello2: (h: String, n: String)Unit
+
+scala> hello2("Hola", "Lera".reverse)
+Hola Scala! This is areL
+
+scala>
