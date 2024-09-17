@@ -1,0 +1,20 @@
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_301).
+Type in expressions for evaluation. Or try :help.
+
+scala> println("Hello Scala! This is Amina")
+Hello Scala! This is Amina
+
+scala> println("Hola Scala! This is Amina")
+Hola Scala! This is Amina
+
+scala> println("guten Tag Scala! This is Amina")
+guten Tag Scala! This is Amina
+
+scala> println("Hello Scala! This is " + "Amina".reverse)
+Hello Scala! This is animA
+
+scala> println("Hola Scala! This is " + "Amina".reverse)
+Hola Scala! This is animA
+
+scala> println("guten Tag Scala! This is " + "Amina".reverse)
+guten Tag Scala! This is animA
