@@ -1,0 +1,20 @@
+PS C:\Users\ratko> scala3-repl
+scala> val name = "Max Ratkov"
+val name: String = Max Ratkov
+
+scala> val template = " Scala! This is "
+val template: String = " Scala! This is "
+
+scala> println(s"Hello$template$name")
+Hello Scala! This is Max Ratkov
+
+scala> println(s"Привет$template$name")
+Привет Scala! This is Max Ratkov
+
+scala> println(s"Hello$template${name.reverse}")
+Hello Scala! This is voktaR xaM
+
+scala> println(s"Привет$template${name.reverse}")
+Привет Scala! This is voktaR xaM
+
+scala>
