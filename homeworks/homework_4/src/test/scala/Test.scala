@@ -1,3 +1,4 @@
+// я пока разбор не смотрел, посмотрю как сдам задание)
 import utest._
 
 object Test extends TestSuite {
@@ -72,6 +73,55 @@ object Test extends TestSuite {
                     case _ => assert(false)
                 }
             }
+        }
+
+        'test_startsInLongCycle - {
+            val width = 100
+            val table = new Table(width, 1)
+
+            for (x <- 0 until (width - 1)) {
+                table.setCell(x, 0, ReferenceCell(x + 1, 0, table))
+            }
+
+            table.setCell(width - 1, 0, ReferenceCell(0, 0, table))
+
+            assert(table.getCell(0, 0).get.toString == "cyclic")
+            assert(table.getCell(width / 2, 0).get.toString == "cyclic")
+        }
+
+        'test_multipleTablesRef - {
+            val table1 = new Table(3, 3)
+            val table2 = new Table(3, 3)
+            val table3 = new Table(3, 3)
+
+            table1.setCell(0, 0, ReferenceCell(0, 0, table2))
+            table2.setCell(0, 0, ReferenceCell(0, 0, table3))
+            table3.setCell(0, 0, StringCell("a"))
+
+            assert(table1.getCell(0, 0).get.toString == "a")
+            assert(table2.getCell(0, 0).get.toString == "a")
+
+            table1.setCell(1, 1, ReferenceCell(2, 2, table2))
+            table2.setCell(2, 2, ReferenceCell(1, 1, table3))
+            table3.setCell(1, 1, ReferenceCell(1, 1, table1))
+
+            assert(table1.getCell(1, 1).get.toString == "cyclic")
+            assert(table2.getCell(2, 2).get.toString == "cyclic")
+            assert(table3.getCell(1, 1).get.toString == "cyclic")
+        }
+
+        'test_withPreCycle - {
+            val width = 100;
+            val table = new Table(width, 1)
+
+            for (x <- 0 until (width - 1)) {
+                table.setCell(x, 0, ReferenceCell(x + 1, 0, table))
+            }
+            table.setCell(width - 1, 0, ReferenceCell(width / 2, 0, table))
+
+            Seq(0, width / 4, width / 2 - 1, width / 2, width / 4 * 3, width - 1).foreach(
+                testX => table.getCell(testX, 0).get.toString == "cyclic"
+            )
         }
     }
 }
