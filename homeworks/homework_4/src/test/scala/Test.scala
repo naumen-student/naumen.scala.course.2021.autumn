@@ -5,6 +5,17 @@ object Test extends TestSuite {
         'test_createTable - {
             val table = new Table(3, 3)
             for (i <- 0 until 9) {
+                /*
+                println("!")
+                println(Some("empty"))
+                println(i/3)
+                println(i%3)
+                println(Some(table(i/3)(i%3)))
+                println(table.getCell(i / 3, i % 3))
+                println(table.getCell(i / 3, i % 3).map(_.toString))
+                println("!")
+                */
+
                 assert(table.getCell(i / 3, i % 3).map(_.toString) == Some("empty"))
             }
             assert(table.getCell(0, -1).map(_.toString) == None)
@@ -72,6 +83,21 @@ object Test extends TestSuite {
                     case _ => assert(false)
                 }
             }
+        }
+        'test_RefCell_ext -
+        {
+            val table = new Table(5,1)
+            val cell00 = new ReferenceCell(1,0,table)
+            table.setCell(0,0,cell00)
+            val cell10 = new ReferenceCell(2,0,table)
+            table.setCell(1,0,cell10)
+            val cell20 = new ReferenceCell(3,0,table)
+            table.setCell(2,0,cell20)
+            val cell30 = new ReferenceCell(4,0,table)
+            table.setCell(3,0,cell30)
+            val cell40 = new ReferenceCell(1,0,table)
+            table.setCell(4,0,cell40)
+            assert(cell20.toString== "cyclic")
         }
     }
 }
